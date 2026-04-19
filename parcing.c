@@ -6,8 +6,11 @@
 
 void print_stack(t_stack *stack)
 {
+	t_stack *temp;
+
 	if (!stack)
 		return ;
+	stack->prev->next = NULL;
     while (stack)
     {
         printf("%d ", stack->value);
@@ -19,16 +22,17 @@ void print_stack(t_stack *stack)
 void free_stack(t_stack **stack)
 {
 	t_stack	*temp;
+	t_stack	*first;
 
 	if (!stack || !*stack)
 		return ;
+	(*stack)->prev->next = NULL;
 	while (*stack)
 	{
 		temp = (*stack)->next;
 		free(*stack);
 		*stack = temp;
 	}
-	*stack = NULL;
 }
 
 void free_temp(char **temp)
@@ -45,23 +49,6 @@ void free_temp(char **temp)
 	}
 	free(temp);
 	temp = NULL;
-}
-
-t_stack *init_stack(char **temp)
-{
-	t_stack *a;
-	int 	i;
-
-	a = NULL;
-	i = 0;
-	if (!temp)
-		return (NULL);
-	while (temp[i])
-	{
-		ft_stack_add_back(&a, ft_stack_new((int)ft_atoil(temp[i])));
-		i++;
-	}
-	return (a);
 }
 
 t_stack	*ft_stack_new(int value)
@@ -94,4 +81,37 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new)
 		last = last->next;
 	last->next = new;
 	new->prev = last;
+}
+
+void ft_circular(t_stack **stack)
+{
+	t_stack *first;
+	t_stack *last;
+
+	if (!stack || !*stack)
+		return ;
+	first = *stack;
+	last = *stack;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = first;
+	first->prev = last;
+}
+
+t_stack *init_stack(char **temp)
+{
+	t_stack *a;
+	int 	i;
+
+	a = NULL;
+	i = 0;
+	if (!temp)
+		return (NULL);
+	while (temp[i])
+	{
+		ft_stack_add_back(&a, ft_stack_new((int)ft_atoil(temp[i])));
+		i++;
+	}
+	ft_circular(&a);
+	return (a);
 }

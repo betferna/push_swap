@@ -28,6 +28,7 @@ void print_stack(t_stack *stack);
 void free_stack(t_stack **stack);
 void free_temp(char **temp);
 t_stack *init_stack(char **temp);
+void ft_circular(t_stack **stack);
 
 
 
