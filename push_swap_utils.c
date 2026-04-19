@@ -1,37 +1,5 @@
 #include "push_swap.h"
 
-t_stack	*ft_stack_new(int value)
-{
-	t_stack	*node;
-
-	node = (t_stack *)malloc(sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->value = value;
-	node->index = -1;
-	node->next = NULL;
-	node->prev = NULL;
-	return (node);
-}
-
-void	ft_stack_add_back(t_stack **stack, t_stack *new)
-{
-	t_stack	*last;
-
-	if (!new || !stack)
-		return ;
-	if (*stack == NULL)
-	{
-		*stack = new;
-		return ;
-	}
-	last = *stack;
-	while (last->next)
-		last = last->next;
-	last->next = new;
-	new->prev = last;
-}
-
 int	ft_stacksize(t_stack *stack)
 {
 	int		size;
@@ -49,19 +17,6 @@ int	ft_stacksize(t_stack *stack)
 	return (size);
 }
 
-// t_stack *init_stack(char **argv)
-// {
-// 	t_stack **a;
-// 	int 	i;
-
-// 	if (!argv)
-// 		return (NULL);
-// 	i = 0;
-// 	*a = ft_stack_new(ft_atoil(argv[i]));
-// 	while (argv[i++])
-// 		ft_stack_add_back(a, ft_stack_new(ft_atoil(argv[i])));
-// }
-
 // void	ft_lstclear(t_stack **lst, void (*del)(void *))
 // {
 // 	t_list	*temp;
@@ -77,6 +32,8 @@ int	ft_stacksize(t_stack *stack)
 // 	}
 // 	*lst = NULL;
 // }
+
+// ********************* SPLIT ****************************//
 
 static int	count_words(const char *str, char c)
 {

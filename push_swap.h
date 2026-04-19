@@ -24,6 +24,11 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new);
 t_stack	*ft_stack_new(int value);
 int		ft_stacksize(t_stack *stack);
 long long int	ft_atoil(const char *str);
+void print_stack(t_stack *stack);
+void free_stack(t_stack **stack);
+void free_temp(char **temp);
+t_stack *init_stack(char **temp);
+
 
 
 # endif
