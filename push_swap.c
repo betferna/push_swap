@@ -23,6 +23,7 @@ int main (int argc, char **argvs)
 			free_temp(temp);
 		return (0);
 	}
+	ft_sa(a);
 	print_stack(a);
 	// if !ft_sorted
 	// {
