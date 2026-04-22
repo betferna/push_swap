@@ -47,10 +47,9 @@ int main (int argc, char **argvs)
 			free_temp(temp);
 		return (0);
 	}
-	// ft_sa(a);
+	sa(&a);
+		print_stack(a);
 	rra(&a);
-
-
 	print_stack(a);
 	// ft_pa(a, b);
 	// print_stack(a);
