@@ -1,4 +1,4 @@
-	#include "push_swap.h"
+#include "push_swap.h"
 
 int main (int argc, char **argvs)
 {
@@ -10,12 +10,18 @@ int main (int argc, char **argvs)
 		return (0);
 	a = NULL;
 	b = NULL;
-	// if (!(is_numb(argvs) && no_duplicate(argvs) && ft_atoil(argvs)))
-	// 	return (NULL);
 	if (argc == 2)
 		temp = ft_split(argvs[1], ' ');
 	else
 		temp = argvs + 1;	
+	if (!(is_numb(temp) && no_duplicate(temp) && range_check(temp)))
+	{
+		if (argc == 2)
+			free_temp(temp);
+		write (2, "Error\n", 6);
+		return (1);
+	}
+	// needs to be true and return error? 
 	a = init_stack(temp);
 	if (!a)
 	{

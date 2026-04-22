@@ -1,15 +1,12 @@
 #include "push_swap.h"
 
-// int is_num()
-
-// int no_duplicate()
-
 void print_stack(t_stack *stack)
 {
 	t_stack *temp;
 
 	if (!stack)
 		return ;
+	stack->prev->next = NULL;
     while (stack)
     {
         printf("%d ", stack->value);
@@ -25,6 +22,7 @@ void free_stack(t_stack **stack)
 
 	if (!stack || !*stack)
 		return ;
+	(*stack)->prev->next = NULL;
 	while (*stack)
 	{
 		temp = (*stack)->next;
@@ -59,17 +57,33 @@ t_stack	*ft_stack_new(int value)
 	node->value = value;
 	node->index = -1;
 	node->next = NULL;
+	node->prev = NULL;
 	return (node);
 }
 
+//new stack node in front:
+static void ft_stack_add_front(t_stack **stack, t_stack *newhead)
+{
+	if (!stack || !newhead)
+		return ;
+	newhead->next = *stack;
+	newhead->prev = NULL;
+	if (*stack != NULL)
+		(*stack)->prev = newhead;
+	*stack = newhead;
+}
+
+//new stakc node in back:
 void	ft_stack_add_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*last;
 
 	if (!new || !stack)
 		return ;
+	new->next = NULL;
 	if (*stack == NULL)
 	{
+		new->prev = NULL;
 		*stack = new;
 		return ;
 	}
@@ -77,7 +91,41 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new)
 	while (last->next)
 		last = last->next;
 	last->next = new;
+	new->prev = last;
 }
+
+// void	ft_stack_add_back(t_stack **stack, t_stack *new)
+// {
+// 	t_stack	*last;
+
+// 	if (!new || !stack)
+// 		return ;
+// 	if (*stack == NULL)
+// 	{
+// 		*stack = new;
+// 		return ;
+// 	}
+// 	last = *stack;
+// 	while (last->next)
+// 		last = last->next;
+// 	last->next = new;
+// 	new->prev = last;
+// }
+
+// void ft_circular(t_stack **stack)
+// {
+// 	t_stack *first;
+// 	t_stack *last;
+
+// 	if (!stack || !*stack)
+// 		return ;
+// 	first = *stack;
+// 	last = *stack;
+// 	while (last->next != NULL)
+// 		last = last->next;
+// 	last->next = first;
+// 	first->prev = last;
+// }
 
 t_stack *init_stack(char **temp)
 {
@@ -93,5 +141,6 @@ t_stack *init_stack(char **temp)
 		ft_stack_add_back(&a, ft_stack_new((int)ft_atoil(temp[i])));
 		i++;
 	}
+	// ft_circular(&a);
 	return (a);
 }
