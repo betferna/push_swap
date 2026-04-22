@@ -19,19 +19,19 @@ void	ft_revrot(t_stack **stack)
 	new_tail->next = NULL;
 }
 
-void ft_rra(t_stack **a)
+void rra(t_stack **a)
 {
 	ft_revrot(a);
 	write (1, "rra\n", 4);
 }
 
-void ft_rrb(t_stack **b)
+void rrb(t_stack **b)
 {
 	ft_revrot(b);
 	write (1, "rrb\n", 4);
 }
 
-void ft_rrr(t_stack **a, t_stack **b)
+void rrr(t_stack **a, t_stack **b)
 {
 	ft_revrot(a);
 	ft_revrot(b);

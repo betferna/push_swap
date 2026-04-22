@@ -11,7 +11,7 @@ void ft_swap(t_stack *a)
 	a->value = tmp;
 }
 
-void ft_sa(t_stack *a)
+void sa(t_stack *a)
 {
 	if (!a)
 		return ;
@@ -19,7 +19,7 @@ void ft_sa(t_stack *a)
 	write (1, "sa ", 3);
 }
 
-void ft_sb(t_stack *b)
+void sb(t_stack *b)
 {
 	if (!b)
 		return ;
@@ -27,11 +27,11 @@ void ft_sb(t_stack *b)
 	write (1, "sb ", 3);
 }
 
-void ft_ss(t_stack *a, t_stack *b)
+void ss(t_stack *a, t_stack *b)
 {
 	if (!a || !b)
 		return ;
-	ft_sa(a);
-	ft_sb(b);
+	sa(a);
+	sb(b);
 	write (1, "ss ", 3);
 }

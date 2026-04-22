@@ -48,7 +48,8 @@ int main (int argc, char **argvs)
 		return (0);
 	}
 	// ft_sa(a);
-	ft_rra(&a);
+	rra(&a);
+
 
 	print_stack(a);
 	// ft_pa(a, b);
