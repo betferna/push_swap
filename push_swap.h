@@ -5,7 +5,6 @@ typedef struct s_stack {
 	int		value;
 	int		index;
 	struct s_stack *next;
-	struct s_stack *prev;
 } t_stack;
 
 
@@ -44,8 +43,14 @@ void	ft_rrr(t_stack **a, t_stack **b);
 int		is_numb(char *str);
 int		all_numbers(char **argvs);
 int		no_duplicate(char **argvs);
-int		range_check(char *str);
+int		range_check(char **str);
 int		is_stack_stored(t_stack *stack);
+int		ft_isdigit(int c);
+void	ft_lstadd_front(t_stack *lst, t_stack *new);
+void	ft_delone(t_stack *lst);
+void ft_push(t_stack *dst, t_stack *src);
+
+
 
 
 

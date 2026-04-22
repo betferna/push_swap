@@ -4,6 +4,12 @@
 all functions return 1 if positive, 0 is faulty
 need libft for libft functions
 */
+int	ft_isdigit(int c)
+{
+	if (!((c >= '0' && c <= '9')))
+		return (0);
+	return (1);
+}
 
 int is_numb(char *str)
 {
@@ -27,7 +33,7 @@ int all_numbers(char **argvs)
 	int i;
 
 	i = 0;
-	while (argvs[i] != '\0')
+	while (*argvs[i] != '\0')
 	{
 		if (!is_numb(argvs[i]))
 			return (0);
@@ -60,11 +66,11 @@ int no_duplicate(char **argvs)
 	return (1);
 }
 
-int range_check(char *str)
+int range_check(char **str)
 {
 	long long n;
 
-	n = ft_atoil(str);
+	n = ft_atoil((const char *)*str);
 	if (n < INT_MIN || n > INT_MAX)
 		return (0);
 	return (1);
