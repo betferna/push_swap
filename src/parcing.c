@@ -2,8 +2,6 @@
 
 void print_stack(t_stack *stack)
 {
-	t_stack *temp;
-
 	if (!stack)
 		return ;
     while (stack)
@@ -16,8 +14,7 @@ void print_stack(t_stack *stack)
 
 void free_stack(t_stack **stack)
 {
-	t_stack	*temp;
-	t_stack	*first;
+	t_stack *temp;
 
 	if (!stack || !*stack)
 		return ;
@@ -59,7 +56,7 @@ t_stack	*ft_stack_new(int value)
 }
 
 //new stack node in front:
-static void ft_stack_add_front(t_stack **stack, t_stack *newhead)
+void ft_stack_add_front(t_stack **stack, t_stack *newhead)
 {
 	if (!stack || !newhead)
 		return ;
@@ -68,7 +65,6 @@ static void ft_stack_add_front(t_stack **stack, t_stack *newhead)
 	*stack = newhead;
 }
 
-//new stakc node in back:
 void	ft_stack_add_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*last;

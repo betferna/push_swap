@@ -3,7 +3,6 @@
 void ft_swap(t_stack *a)
 {
 	int tmp;
-	t_stack *first;
 
 	if (!a)
 		return ;

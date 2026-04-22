@@ -3,7 +3,7 @@
 int main (int argc, char **argvs)
 {
 	t_stack *a;
-	t_stack *b;
+	// t_stack *b;
 	char **temp;
 	int 	i;
 
@@ -25,7 +25,7 @@ int main (int argc, char **argvs)
             return (1);
     }
 	a = NULL;
-	b = NULL;
+	// b = NULL;
 	if (argc == 2)
 		temp = ft_split(argvs[1], ' ');
 	else

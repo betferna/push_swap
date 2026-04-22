@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 //move head to back:
-static void	rotate(t_stack **stack)
+void	rotate(t_stack **stack)
 {
 	t_stack *head;
 
@@ -9,7 +9,6 @@ static void	rotate(t_stack **stack)
 		return;
 	head = *stack;
 	*stack = head->next;
-	(*stack)->prev = NULL;
 	ft_stack_add_back(stack, head);
 }
 
