@@ -50,7 +50,7 @@ int		is_stack_stored(t_stack *stack);
 int		ft_isdigit(int c);
 void	ft_lstadd_front(t_stack *lst, t_stack *new);
 //void	ft_delone(t_stack *lst);
-void	ft_push(t_stack **dst, t_stack **src)
+void	ft_push(t_stack **dst, t_stack **src);
 void	ft_revrot(t_stack **stack);
 void 	ft_stack_add_front(t_stack **stack, t_stack *tail);
 
