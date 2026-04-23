@@ -61,7 +61,6 @@ void ft_stack_add_front(t_stack **stack, t_stack *newhead)
 	if (!stack || !newhead)
 		return ;
 	newhead->next = *stack;
-	if (*stack != NULL)
 	*stack = newhead;
 }
 

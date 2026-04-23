@@ -1,24 +1,38 @@
 #include "push_swap.h"
 
-void ft_push(t_stack *dst, t_stack *src)
+void ft_push(t_stack **dst, t_stack **src)
 {
-	ft_lstadd_front(dst, src);
-	ft_delone(src);
+	t_stack *tmp;
+
+	if (!src || !*src)
+		return ;
+	tmp = *src;
+	*src = (*src)->next;
+	ft_stack_add_front(dst, tmp);
 }
 
+// void	ft_lstadd_front(t_stack *lst, t_stack *new)
+// {
+// 	if (!lst || !new)
+// 		return ;
+// 	new->next = lst;
+// 	lst = new;
+// }
+// void	ft_delone(t_stack *lst)
+// {
+// 	if (lst == NULL)
+// 		return ;
+// 	free(lst);
+// }
 
-void	ft_lstadd_front(t_stack *lst, t_stack *new)
+void pa(t_stack **a, t_stack **b)
 {
-	if (!lst || !new)
-		return ;
-	new->next = lst;
-	lst = new;
+	ft_push(a, b);
+	write (1, "pa\n", 3);
 }
-void	ft_delone(t_stack *lst)
+
+void pb(t_stack **a, t_stack **b)
 {
-	if (lst == NULL)
-		return ;
-	if (!lst)
-		return ;
-	free(lst);
+	ft_push(b, a);
+	write (1, "pb\n", 3);
 }
