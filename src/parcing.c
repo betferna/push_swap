@@ -82,39 +82,6 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new)
 	last->next = new;
 }
 
-// void	ft_stack_add_back(t_stack **stack, t_stack *new)
-// {
-// 	t_stack	*last;
-
-// 	if (!new || !stack)
-// 		return ;
-// 	if (*stack == NULL)
-// 	{
-// 		*stack = new;
-// 		return ;
-// 	}
-// 	last = *stack;
-// 	while (last->next)
-// 		last = last->next;
-// 	last->next = new;
-// 	new->prev = last;
-// }
-
-// void ft_circular(t_stack **stack)
-// {
-// 	t_stack *first;
-// 	t_stack *last;
-
-// 	if (!stack || !*stack)
-// 		return ;
-// 	first = *stack;
-// 	last = *stack;
-// 	while (last->next != NULL)
-// 		last = last->next;
-// 	last->next = first;
-// 	first->prev = last;
-// }
-
 t_stack *init_stack(char **temp)
 {
 	t_stack *a;

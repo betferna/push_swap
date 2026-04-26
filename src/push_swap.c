@@ -3,7 +3,7 @@
 int main (int argc, char **argvs)
 {
 	t_stack *a;
-	// t_stack *b;
+	t_stack *b;
 	char **temp;
 	int 	i;
 
@@ -25,7 +25,7 @@ int main (int argc, char **argvs)
             return (1);
     }
 	a = NULL;
-	// b = NULL;
+	b = NULL;
 	if (argc == 2)
 		temp = ft_split(argvs[1], ' ');
 	else
@@ -48,8 +48,10 @@ int main (int argc, char **argvs)
 		return (0);
 	}
 	sa(&a);
-		print_stack(a);
+	print_stack(a);
 	rra(&a);
+	print_stack(a);
+	pb(&a,&b);
 	print_stack(a);
 	// ft_pa(a, b);
 	// print_stack(a);
@@ -65,6 +67,7 @@ int main (int argc, char **argvs)
 	// 		big_sort(&a, &b)
 	// }
 	free_stack(&a);
+	free_stack(&b);
 	if (argc == 2)
 		free_temp(temp);
 	return (0);

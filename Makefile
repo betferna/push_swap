@@ -1,4 +1,9 @@
 NAME	= push_swap
+
+LIBFT_DIR = ./libft
+LIBFT	= $(LIBFT_DIR)/libft.a
+INCLUDES	= -I ./libft
+
 CC 	= cc
 CFLAGS 	= -Wall -Wextra -Werror -I. $(INCLUDES)
 
@@ -17,6 +22,14 @@ OBJS	= $(SRCS:.c=.o)
 
 all	: $(NAME)
 
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
+
+
+$(NAME)	: $(LIBFT) $(OBJS)
+	cp $(LIBFT) $(NAME)
+	ar rcs $(NAME) $(OBJS)
+
 $(NAME)	: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
@@ -25,9 +38,12 @@ $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean	:
 	@rm -f $(OBJS)
+	@make -C $(LIBFT_DIR) clean --no-print-directory
 
 fclean	: clean 	
-	@rm -f $(NAME)
+	@rm -f $(NAME) test_printf
+	@make -C $(LIBFT_DIR) fclean --no-print-directory
+
 
 re 	: fclean all
 
