@@ -32,6 +32,8 @@ void 	ft_swap(t_stack **stack);
 void 	sa(t_stack **a);
 void 	sb(t_stack **b);
 void 	ss(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
 void	rotate(t_stack **stack);
 void	ra(t_stack **a);
 void	rb(t_stack **a);
@@ -51,6 +53,10 @@ int		is_stack_stored(t_stack *stack);
 int		ft_isdigit(int c);
 void	ft_lstadd_front(t_stack **lst, t_stack **new);
 void	ft_delone(t_stack **lst);
+void	ft_lstadd_front(t_stack *lst, t_stack *new);
+//void	ft_delone(t_stack *lst);
+void	ft_push(t_stack **dst, t_stack **src);
+void	ft_revrot(t_stack **stack);
 void 	ft_stack_add_front(t_stack **stack, t_stack *tail);
 
 
