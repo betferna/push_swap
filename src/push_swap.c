@@ -53,6 +53,7 @@ int main (int argc, char **argvs)
 	print_stack(a);
 	pb(&a,&b);
 	print_stack(a);
+	print_stack(b);
 	// ft_pa(a, b);
 	// print_stack(a);
 	// if !ft_sorted

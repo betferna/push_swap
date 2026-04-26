@@ -26,9 +26,9 @@ $(LIBFT):
 	@make -C $(LIBFT_DIR)
 
 
-$(NAME)	: $(LIBFT) $(OBJS)
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(OBJS)
+# $(NAME)	: $(LIBFT) $(OBJS)
+# 	cp $(LIBFT) $(NAME)
+# 	ar rcs $(NAME) $(OBJS)
 
 $(NAME)	: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
