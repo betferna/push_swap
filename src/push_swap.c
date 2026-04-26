@@ -6,6 +6,7 @@ int main (int argc, char **argvs)
 	t_stack *b;
 	char **temp;
 	int 	i;
+	// int 	disorder;
 
 	if (argc < 2)
 		return (0);
@@ -54,7 +55,8 @@ int main (int argc, char **argvs)
 	pb(&a,&b);
 	print_stack(a);
 	print_stack(b);
-	// ft_pa(a, b);
+	printf("Disorder = %i\n", comp_disorder(&a));
+// ft_pa(a, b);
 	// print_stack(a);
 	// if !ft_sorted
 	// {

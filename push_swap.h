@@ -60,6 +60,7 @@ void	ft_revrot(t_stack **stack);
 void 	ft_stack_add_front(t_stack **stack, t_stack *tail);
 t_stack	*ft_lstlast(t_stack **lst);
 void	ft_lstdellast(t_stack **lst);
+int 	comp_disorder(t_stack **stack);
 
 
 

@@ -15,7 +15,8 @@ SRC_FILES = check_stack.c \
             ft_swap.c \
             parcing.c \
             push_swap_utils.c \
-            push_swap.c
+            push_swap.c\
+			comp_disorder.c
 
 SRCS 	= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS	= $(SRCS:.c=.o)
