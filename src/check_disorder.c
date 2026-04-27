@@ -9,8 +9,9 @@ double check_disorder(t_stack **stack)
 
     total_pairs = 0;
     mistakes = 0;
+
     if (!stack || !*stack)
-        return (0.0);
+        return (-1.0);
     i_node = *stack;
     while (i_node != NULL)
     {
@@ -27,3 +28,4 @@ double check_disorder(t_stack **stack)
     }
     return ((double)mistakes / total_pairs);
 }
+

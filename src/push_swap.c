@@ -57,6 +57,9 @@ int main (int argc, char **argvs)
 		b = NULL;
 		a = ft_parce(argc, argvs, a);
 //**** test ****/
+
+		printf("Disorder = %f\n", comp_disorder(&a));
+		printf("Disorder 2 = %f\n", check_disorder(&a));	
 		sa(&a);
 		print_stack(a);
 		rra(&a);
@@ -64,10 +67,9 @@ int main (int argc, char **argvs)
 		pb(&a,&b);
 		print_stack(a);
 		print_stack(b);
-		printf("Disorder = %f\n", comp_disorder(&a));
-		printf("Disorder 2 = %f\n", check_disorder(&a));	
 	}
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
 }
+

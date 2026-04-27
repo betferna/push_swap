@@ -7,16 +7,15 @@ double comp_disorder(t_stack **stack)
 	t_stack *i = *stack;
 	t_stack *j;
 	if (!stack || !*stack)
-		return (-1);
-	while (i->next != NULL)
+		return (-1.0);
+	while (i != NULL)
 	{
 		j = i->next;
-		while (j->next != NULL)
+		while (j != NULL)
 		{
-			total_pairs += 1;
-			if (i->value > j->value)
-				mistakes += 1;
-			j = j->next;
+			mistakes += (i->value > j->value);
+			j = j->next;			
+            total_pairs += 1;
 		}
 		i = i->next;
 	}

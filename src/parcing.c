@@ -6,7 +6,7 @@ void print_stack(t_stack *stack)
 		return ;
     while (stack)
     {
-        printf("%d ", stack->value);
+        printf("%d\n", stack->value);
         stack = stack->next;
     }
     printf("\n");
@@ -95,6 +95,5 @@ t_stack *init_stack(char **temp)
 		ft_stack_add_back(&a, ft_stack_new((int)ft_atoil(temp[i])));
 		i++;
 	}
-	// ft_circular(&a);
 	return (a);
 }
