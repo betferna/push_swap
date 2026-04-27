@@ -61,6 +61,7 @@ void 	ft_stack_add_front(t_stack **stack, t_stack *tail);
 t_stack	*ft_lstlast(t_stack **lst);
 void	ft_lstdellast(t_stack **lst);
 int 	comp_disorder(t_stack **stack);
+double check_disorder(t_stack **stack);
 
 
 
