@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int comp_disorder(t_stack **stack)
+double comp_disorder(t_stack **stack)
 {
 	int mistakes = 0;
 	int total_pairs = 0;
@@ -20,5 +20,5 @@ int comp_disorder(t_stack **stack)
 		}
 		i = i->next;
 	}
-	return (mistakes / total_pairs);
+	return ((double)mistakes / total_pairs);
 }

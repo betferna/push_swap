@@ -1,13 +1,8 @@
 #include "push_swap.h"
 
-int main (int argc, char **argvs)
+int ft_check_valid(int argc, char **argvs)
 {
-	t_stack *a;
-	t_stack *b;
-	char **temp;
-	int 	i;
-	// int 	disorder;
-
+	int i;
 	if (argc < 2)
 		return (0);
 	i = 1;
@@ -16,62 +11,63 @@ int main (int argc, char **argvs)
         if (!is_numb(argvs[i]))
         {
             write(2, "Error\n", 6);
-            return (1);
+            return (0);
         }
         i++;
     }
 	if (!no_duplicate(argvs+1))
 	{
             write(2, "Error\n", 6);
-            return (1);
+            return (0);
     }
-	a = NULL;
-	b = NULL;
+	return (1);
+}
+
+t_stack *ft_parce(int argc, char **argvs, t_stack *a)
+{
+	char **temp;
 	if (argc == 2)
+	{
 		temp = ft_split(argvs[1], ' ');
+	}
 	else
 		temp = argvs + 1;	
-	i = 1;
 
-	// if (!(is_numb(temp) && no_duplicate(temp) && range_check(temp)))
-	// {
-	// 	if (argc == 2)
-	// 		free_temp(temp);
-	// 	write (2, "Error\n", 6);
-	// 	return (1);
-	// }
-	// needs to be true and return error? 
 	a = init_stack(temp);
 	if (!a)
 	{
 		if (argc == 2)
 			free_temp(temp);
-		return (0);
+		write(2, "Error\n", 6);
+		return (NULL);
 	}
-	sa(&a);
-	print_stack(a);
-	rra(&a);
-	print_stack(a);
-	pb(&a,&b);
-	print_stack(a);
-	print_stack(b);
-	printf("Disorder = %i\n", comp_disorder(&a));
-// ft_pa(a, b);
-	// print_stack(a);
-	// if !ft_sorted
-	// {
-	// 	if arcs < 4
-	// 		three_sort(&a, &b)
-	// 	else if arcs < 7
-	// 		small_sort(&a, &b)
-	// 	else if arcs <	500
-	// 		chunk_sort(&a, &b)
-	// 	else
-	// 		big_sort(&a, &b)
-	// }
-	free_stack(&a);
-	free_stack(&b);
 	if (argc == 2)
 		free_temp(temp);
+	return (a);
+}
+
+int main (int argc, char **argvs)
+{
+	t_stack *a;
+	t_stack *b;
+
+	if (ft_check_valid(argc, argvs))
+	{
+		a = NULL;
+		b = NULL;
+		a = ft_parce(argc, argvs, a);
+//**** test ****/
+		sa(&a);
+		print_stack(a);
+		rra(&a);
+		print_stack(a);
+		pb(&a,&b);
+		print_stack(a);
+		print_stack(b);
+		printf("Disorder = %f\n", comp_disorder(&a));
+		printf("Disorder 2 = %f\n", check_disorder(&a));	
+	}
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }
