@@ -29,29 +29,28 @@ int p_flag(char *arg, t_strategy *output)
     return (0);
 }
 
-void sort(t_stack **a, t_stack **b, t_strategy s)
+void dispatch_strategy(t_stack **a, t_stack **b, t_strategy s)
 {
     if (s == STRATEGY_SIMPLE)
     {
         simple_sort(a, b);
-        write(1, "sort strategy: simple sort", 26);
+        ft_putstr_fd("sort strategy: simple sort\n", 1);//for testing, remove later
     }
     else if (s == STRATEGY_MEDIUM)
     {
         medium_sort(a, b);
-        write(1, "sort strategy: medium sort", 26);
+        ft_putstr_fd("sort strategy: medium sort\n", 1);//for testing, remove later
     }
     else if (s == STRATEGY_COMPLEX)
     {
         complex_sort(a, b);
-        write(1, "sort strategy: complex sort", 27);
+        ft_putstr_fd("sort strategy: complex sort\n", 1);//for testing, remove later
     }
     else if (s == STRATEGY_ADAPTIVE)
-    {
         adaptive_sort(a, b);
-        write(1, "sort strategy: adaptive sort", 27);
-    }
 }
+// call in main: dispatch_strategy(&a, &b, strategy);
+// t_strategy s = STRATEGY_ADAPTIVE; only override it if a flag is detected
 
 void adaptive_sort(t_stack **a, t_stack **b)
 {
@@ -61,17 +60,17 @@ void adaptive_sort(t_stack **a, t_stack **b)
     if (disorder < 0.2)
     {
         simple_sort(a, b);
-        write(1, "sort strategy: simple sort", 26);
+        ft_putstr_fd("sort strategy: simple sort\n", 1);//for testing, remove later
     }
     else if (disorder < 0.5)
     {
         medium_sort(a, b);
-        write(1, "sort strategy: medium sort", 26);
+        ft_putstr_fd("sort strategy: medium sort\n", 1);//for testing, remove later
     }
     else
     {
         complex_sort(a, b);
-        write(1, "sort strategy: complex sort", 27);
+        ft_putstr_fd("sort strategy: complex sort\n", 1);//for testing, remove later
     }
 }
 
