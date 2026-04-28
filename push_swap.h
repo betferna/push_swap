@@ -7,6 +7,14 @@ typedef struct s_stack {
 	struct s_stack *next;
 } t_stack;
 
+typedef enum s_strategy
+{
+    STRATEGY_ADAPTIVE,
+    STRATEGY_SIMPLE,
+    STRATEGY_MEDIUM,
+    STRATEGY_COMPLEX
+}   t_strategy;
+
 
 # include <fcntl.h>
 # include <limits.h>
