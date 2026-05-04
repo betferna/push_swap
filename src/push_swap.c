@@ -50,7 +50,7 @@ int main (int argc, char **argvs)
 {
 	t_stack *a;
 	t_stack *b;
-	t_stack count;
+	int count;
 
 	ft_memset(count, 0, sizeof(count));
 	if (ft_check_valid(argc, argvs))
