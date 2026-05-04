@@ -11,11 +11,6 @@ void complex_sort(t_stack **a, t_stack **b)
     i = 0;
     bit_position = 0;
     (*a)->index = 0;
-    while (*a != NULL)
-    {
-        (*a)->next->index += 1;
-        n++;
-    }
     max_bits = n-1;
     while ()
 
