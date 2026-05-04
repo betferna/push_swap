@@ -59,15 +59,18 @@ int main (int argc, char **argvs)
 //**** test ****/
 
 		printf("Disorder = %f\n", comp_disorder(&a));
-		printf("Disorder 2 = %f\n", check_disorder(&a));	
+		// printf("Disorder 2 = %f\n", check_disorder(&a));	
 		sa(&a);
 		print_stack(a);
-		rra(&a);
-		print_stack(a);
-		pb(&a,&b);
+		sb(&b);
+		print_stack(b);
+		ss(&a, &b);
 		print_stack(a);
 		print_stack(b);
 		pa(&a,&b);
+		print_stack(a);
+		print_stack(b);
+		pb(&a,&b);
 		print_stack(a);
 		print_stack(b);
 		ra(&a);
@@ -82,13 +85,12 @@ int main (int argc, char **argvs)
 		rra(&a);
 		print_stack(a);
 		print_stack(b);
-		rra(&b);
+		rrb(&b);
 		print_stack(a);
 		print_stack(b);
 		rrr(&a,&b);
 		print_stack(a);
 		print_stack(b);
-
 	}
 	free_stack(&a);
 	free_stack(&b);

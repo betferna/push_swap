@@ -4,7 +4,7 @@ void ft_swap(t_stack **stack)
 {
 	int tmp;
 
-	if (!stack)
+	if (!stack || !*stack	)
 		return ;
 	tmp = (*stack)->next->value;
 	(*stack)->next->value = (*stack)->value;
