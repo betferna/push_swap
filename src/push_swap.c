@@ -52,7 +52,7 @@ int main (int argc, char **argvs)
 	t_stack *b;
 	t_counter *count;
 
-	count = ft_memset(count, 0, sizeof(count));
+	count = ft_memset(count, 0, sizeof(count)); // add malloc
 	if (ft_check_valid(argc, argvs))
 	{
 		a = NULL;

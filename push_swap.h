@@ -62,7 +62,7 @@ void	rotate(t_stack **stack);
 void	ra(t_stack **a, t_counter *count);
 void	rb(t_stack **a, t_counter *count);
 void	rr(t_stack **a, t_stack **b, t_counter *count);
-void	revrot(t_stack **stack, t_counter *count);
+void	revrot(t_stack **stack);
 void	rra(t_stack **a, t_counter *count);
 void	rrb(t_stack **b, t_counter *count);
 void	rrr(t_stack **a, t_stack **b, t_counter *count);
