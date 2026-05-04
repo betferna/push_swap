@@ -43,16 +43,20 @@ t_stack	*ft_lstlast(t_stack **lst)
 	return (last);
 }
 
-void pa (t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b, t_counter *count)
 {
 	ft_push(a,b);
 	write (1, "pa\n", 3);
+	count->pa += 1;
+	count->total += 1;
 }
 
-void pb (t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b, t_counter *count)
 {
 	ft_push(b,a);
 	write (1, "pb\n", 3);
+	count->pb += 1;
+	count->total += 1;
 }
 
 

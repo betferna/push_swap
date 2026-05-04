@@ -9,12 +9,28 @@ typedef struct s_stack {
 
 typedef enum s_strategy
 {
-    STRATEGY_ADAPTIVE,
-    STRATEGY_SIMPLE,
-    STRATEGY_MEDIUM,
-    STRATEGY_COMPLEX
+	STRATEGY_ADAPTIVE,
+	STRATEGY_SIMPLE,
+	STRATEGY_MEDIUM,
+	STRATEGY_COMPLEX
 }   t_strategy;
 
+typedef struct s_counter
+{
+	int sa;
+	int sb;
+	int ss;
+	int pa;
+	int pb;
+	int pb;
+	int ra;
+	int rb;
+	int rr;
+	int rra;
+	int rrb;
+	int rrr;
+	int total;
+}   t_counter
 
 # include <fcntl.h>
 # include <limits.h>
@@ -37,22 +53,20 @@ void 	free_temp(char **temp);
 t_stack *init_stack(char **temp);
 //void 	ft_circular(t_stack **stack);
 void 	ft_swap(t_stack **stack);
-void 	sa(t_stack **a);
-void 	sb(t_stack **b);
-void 	ss(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **a, t_stack **b);
+void 	sa(t_stack **a, t_counter *count);
+void 	sb(t_stack **b, t_counter *count);
+void 	ss(t_stack **a, t_stack **b, t_counter *count);
+void	pa(t_stack **a, t_stack **b, t_counter *count);
+void	pb(t_stack **a, t_stack **b, t_counter *count);
 void	rotate(t_stack **stack);
-void	ra(t_stack **a);
-void	rb(t_stack **a);
-void	rr(t_stack **a, t_stack **b);
-void	revrot(t_stack **stack);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+void	ra(t_stack **a, t_counter *count);
+void	rb(t_stack **a, t_counter *count);
+void	rr(t_stack **a, t_stack **b, t_counter *count);
+void	revrot(t_stack **stack, t_counter *count);
+void	rra(t_stack **a, t_counter *count);
+void	rrb(t_stack **b, t_counter *count);
+void	rrr(t_stack **a, t_stack **b, t_counter *count);
 void 	ft_push(t_stack **dst, t_stack **src);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **b, t_stack **a);
 int		is_numb(char *str);
 int		all_numbers(char **argvs);
 int		no_duplicate(char **argvs);

@@ -50,7 +50,9 @@ int main (int argc, char **argvs)
 {
 	t_stack *a;
 	t_stack *b;
+	int count;
 
+	ft_memset(count, 0, sizeof(count));
 	if (ft_check_valid(argc, argvs))
 	{
 		a = NULL;
@@ -60,35 +62,35 @@ int main (int argc, char **argvs)
 
 		printf("Disorder = %f\n", comp_disorder(&a));
 		// printf("Disorder 2 = %f\n", check_disorder(&a));	
-		sa(&a);
+		sa(&a, count);
 		print_stack(a);
-		sb(&b);
+		sb(&b, count);
 		print_stack(b);
-		ss(&a, &b);
-		print_stack(a);
-		print_stack(b);
-		pa(&a,&b);
+		ss(&a, &b, count);
 		print_stack(a);
 		print_stack(b);
-		pb(&a,&b);
+		pa(&a,&b, count);
 		print_stack(a);
 		print_stack(b);
-		ra(&a);
+		pb(&a,&b, count);
 		print_stack(a);
 		print_stack(b);
-		rb(&b);
+		ra(&a, count);
 		print_stack(a);
 		print_stack(b);
-		rr(&a,&b);
+		rb(&b, count);
 		print_stack(a);
 		print_stack(b);
-		rra(&a);
+		rr(&a,&b, count);
 		print_stack(a);
 		print_stack(b);
-		rrb(&b);
+		rra(&a,count);
 		print_stack(a);
 		print_stack(b);
-		rrr(&a,&b);
+		rrb(&b, count);
+		print_stack(a);
+		print_stack(b);
+		rrr(&a,&b, count);
 		print_stack(a);
 		print_stack(b);
 	}
