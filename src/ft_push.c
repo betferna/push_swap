@@ -52,7 +52,7 @@ void pa (t_stack **a, t_stack **b)
 void pb (t_stack **a, t_stack **b)
 {
 	ft_push(b,a);
-	write (1, "pa\n", 3);
+	write (1, "pb\n", 3);
 }
 
 

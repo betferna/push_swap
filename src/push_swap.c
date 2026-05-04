@@ -67,6 +67,28 @@ int main (int argc, char **argvs)
 		pb(&a,&b);
 		print_stack(a);
 		print_stack(b);
+		pa(&a,&b);
+		print_stack(a);
+		print_stack(b);
+		ra(&a);
+		print_stack(a);
+		print_stack(b);
+		rb(&b);
+		print_stack(a);
+		print_stack(b);
+		rr(&a,&b);
+		print_stack(a);
+		print_stack(b);
+		rra(&a);
+		print_stack(a);
+		print_stack(b);
+		rra(&b);
+		print_stack(a);
+		print_stack(b);
+		rrr(&a,&b);
+		print_stack(a);
+		print_stack(b);
+
 	}
 	free_stack(&a);
 	free_stack(&b);

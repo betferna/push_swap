@@ -10,6 +10,7 @@ void	rotate(t_stack **stack)
 	head = *stack;
 	*stack = head->next;
 	ft_stack_add_back(stack, head);
+	head->next = NULL;
 }
 
 void ra(t_stack **a)
