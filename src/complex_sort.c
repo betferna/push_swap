@@ -24,7 +24,7 @@ void assign_index(t_stack **a)
     }
 }
 
-int max_bits(int n)
+int calc_max_bits(int n)
 {
 int bits;
 int max_bits;
@@ -43,9 +43,9 @@ void complex_sort(t_stack **a, t_stack **b)
     int bit_position;
     int i;
     
-    n = ft_stacksize(a);
+    n = ft_stacksize(*a);
 
-    max_bits = max_bits((*a)->index == n)
+    max_bits = calc_max_bits((*a)->index == n)
     i = 0;
     bit_position = 0;
     (*a)->index = 0;
