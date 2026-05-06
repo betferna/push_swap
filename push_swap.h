@@ -84,6 +84,7 @@ t_stack	*ft_lstlast(t_stack **lst);
 void	ft_lstdellast(t_stack **lst);
 double 	comp_disorder(t_stack **stack);
 double 	check_disorder(t_stack **stack);
+void	complex_sort(t_stack **a, t_stack **b, t_counter *count);
 
 
 
