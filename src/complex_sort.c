@@ -42,16 +42,27 @@ void complex_sort(t_stack **a, t_stack **b)
     int max_bits;// n-1 the total number or numbers in the stack. 
     int bit_position;
     int i;
+    t_counter *count;
     
     n = ft_stacksize(*a);
-
-    max_bits = calc_max_bits((*a)->index == n)
+    max_bits = calc_max_bits((*a)->index == n);
     i = 0;
     bit_position = 0;
     (*a)->index = 0;
-    while ()
-
+    while (bit_position < max_bits)
+    {
+        while (i < n)
+        {
+            if ((((*a)->index >> bit_position) & 1 ) == 0)
+                pb(*a, count);
+            else
+                ra((*a), count);
+            i++;
+        }
+        while ((*b)->next);
+            pa((*b), count);
+        bit_position++;
+    }
+}
     // if bit is 0 push to b (pb)
     // if bit is 1 rotate in A (ra)
-
-}
