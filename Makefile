@@ -17,7 +17,8 @@ SRC_FILES = check_stack.c \
             push_swap_utils.c \
             push_swap.c\
 			comp_disorder.c\
-			check_disorder.c
+			check_disorder.c\
+			complex_sort.c
 
 SRCS 	= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS	= $(SRCS:.c=.o)
@@ -32,8 +33,8 @@ $(LIBFT):
 # 	cp $(LIBFT) $(NAME)
 # 	ar rcs $(NAME) $(OBJS)
 
-$(NAME)	: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME)	: $(LIBFT) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@

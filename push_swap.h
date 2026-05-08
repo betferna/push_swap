@@ -22,7 +22,6 @@ typedef struct s_counter
 	int ss;
 	int pa;
 	int pb;
-	int pb;
 	int ra;
 	int rb;
 	int rr;
@@ -30,7 +29,7 @@ typedef struct s_counter
 	int rrb;
 	int rrr;
 	int total;
-}   t_counter
+}   t_counter;
 
 # include <fcntl.h>
 # include <limits.h>
@@ -73,7 +72,7 @@ int		no_duplicate(char **argvs);
 int		range_check(char **str);
 int		is_stack_stored(t_stack *stack);
 int		ft_isdigit(int c);
-void	ft_lstadd_front(t_stack **lst, t_stack **new);
+// void	ft_lstadd_front(t_stack **lst, t_stack **new);
 void	ft_delone(t_stack **lst);
 // void	ft_lstadd_front(t_stack *lst, t_stack *new);
 //void	ft_delone(t_stack *lst);
@@ -84,7 +83,10 @@ t_stack	*ft_lstlast(t_stack **lst);
 void	ft_lstdellast(t_stack **lst);
 double 	comp_disorder(t_stack **stack);
 double 	check_disorder(t_stack **stack);
+void	assign_index(t_stack **a);
+int		calc_max_bits(int n);
 void	complex_sort(t_stack **a, t_stack **b, t_counter *count);
+void	*ft_memset(void *s, int c, size_t n);
 
 
 

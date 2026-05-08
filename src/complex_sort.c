@@ -60,7 +60,9 @@ void complex_sort(t_stack **a, t_stack **b, t_counter *count)
                 ra(a, count);
         }
         while (*b)
+        {
             pa(a, b, count);
+        }
         bit_position++;
     }
 }

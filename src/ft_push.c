@@ -1,16 +1,28 @@
 #include "push_swap.h"
 
+// void ft_push(t_stack **dst, t_stack **src)
+// {
+// 	t_stack *tailtmp;
+
+// 	if (!dst || !src || !*src)
+// 		return ;
+// 	// while (tail->next != NULL)
+// 	// 	tail = tail->next;
+// 	tail = ft_lstlast(src);
+// 	ft_lstadd_front(dst, &tail);
+// 	ft_lstdellast(src);
+// 	// ft_delone(src);
+// }
+
 void ft_push(t_stack **dst, t_stack **src)
 {
-	t_stack *tail;
+	t_stack *tmp;
+
 	if (!dst || !src || !*src)
 		return ;
-	// while (tail->next != NULL)
-	// 	tail = tail->next;
-	tail = ft_lstlast(src);
-	ft_lstadd_front(dst, &tail);
-	ft_lstdellast(src);
-	// ft_delone(src);
+	tmp = *src;
+	*src = (*src)->next;
+	ft_stack_add_front(dst, tmp);
 }
 void	ft_lstdellast(t_stack **lst)
 {
@@ -60,13 +72,13 @@ void	pb(t_stack **a, t_stack **b, t_counter *count)
 }
 
 
-void	ft_lstadd_front(t_stack **lst, t_stack **new)
-{
-	if (!lst || !new || !*new)
-		return ;
-	(*new)->next = *lst;
-	*lst = *new;
-}
+// void	ft_lstadd_front(t_stack **lst, t_stack **new)
+// {
+// 	if (!lst || !new || !*new)
+// 		return ;
+// 	(*new)->next = *lst;
+// 	*lst = *new;
+// }
 
 // void	ft_lstadd_front(t_stack *lst, t_stack *new)
 // {
