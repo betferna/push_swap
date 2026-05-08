@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 12:15:48 by betferna          #+#    #+#             */
-/*   Updated: 2026/05/08 22:46:34 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/08 22:56:20 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void three_sort(t_stack **stack, t_counter *count)
 {
 	if (!stack || !*stack || ft_lstsize(*stack) != 3)
 		return ;
-
 	if (is_higher(*stack, *stack))
 		ra(stack, count);
 	else if (is_higher((*stack)->next, *stack))

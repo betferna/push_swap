@@ -56,7 +56,7 @@ t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count)
 {
 	double disorder;
 
-    disorder = check_disorder(a);
+    disorder = comp_disorder(a);
     if (disorder < 0.2)
     {
         simple_sort(a, b, count);
