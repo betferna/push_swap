@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 12:15:48 by betferna          #+#    #+#             */
-/*   Updated: 2026/05/08 22:19:21 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/08 22:46:34 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,43 @@ void simple_sort(t_stack **a, t_stack **b, t_counter *count)
 	    five_sort(a, b, count);
 }
 
+int find_min(t_stack *stack)
+{
+	int min;
+	min = stack->value;
+	while (stack)
+	{
+		if (min > stack->value)
+			min = stack->value;
+		stack = stack->next;
+	}
+	return (min);
+}
+
 void five_sort(t_stack **a, t_stack **b, t_counter *count)
 {
+	int min;
 	if (!a || !b || !count)
 		return ;
+	while (ft_lstsize(*a) > 3)
+	{
+		min = find_min(*a);
+		while ((*a)->value != min)
+			ra(a, count);
+		pb(a,b,count);
+	}
+	three_sort(a, count);
+	if (ft_lstsize(*b) < 2)
+		pa(a,b,count);
+	else if ((*b)->value > (*b)->next->value)
+	{
+		pa(a,b,count);
+		pa(a,b,count);
+	}
+	else 
+	{
+		ra(b,count);
+		pa(a,b,count);
+		pa(a,b,count);
+	}
 }

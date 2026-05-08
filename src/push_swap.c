@@ -100,8 +100,10 @@ int main (int argc, char **argvs)
 		print_stack(a);
 		// complex_sort(&a, &b, count);
 		// print_stack(a);
-		three_sort(&a, count);
+		simple_sort(&a,&b, count);
 		print_stack(a);
+		print_stack(b);
+
 	}
 	free_stack(&a);
 	free_stack(&b);
