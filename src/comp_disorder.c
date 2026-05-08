@@ -13,9 +13,10 @@ double comp_disorder(t_stack **stack)
 		j = i->next;
 		while (j != NULL)
 		{
-			mistakes += (i->value > j->value);
-			j = j->next;			
-            total_pairs += 1;
+			if (i->value > j->value)
+                mistakes++;
+            total_pairs++;
+            j = j->next;
 		}
 		i = i->next;
 	}

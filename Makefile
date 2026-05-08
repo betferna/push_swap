@@ -18,7 +18,6 @@ SRC_FILES = check_stack.c \
             push_swap.c\
 			ft_adaptive.c\
 			comp_disorder.c\
-			check_disorder.c\
 			complex_sort.c\
 			simple_sort.c\
 			bench.c
