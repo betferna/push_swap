@@ -31,6 +31,12 @@ typedef struct s_counter
 	int total;
 }   t_counter;
 
+typedef struct s_opts
+{
+	t_strategy strategy;
+	int bench;
+} 	t_opts;
+
 # include <fcntl.h>
 # include <limits.h>
 # include <stdint.h>
@@ -44,6 +50,7 @@ char	**ft_split(char const *s, char c);
 t_stack *init_stack(char **argv);
 void	ft_stack_add_back(t_stack **stack, t_stack *new);
 t_stack	*ft_stack_new(int value);
+t_stack *ft_parse(int argc, char **argvs, t_stack *a);
 int		ft_stacksize(t_stack *stack);
 long long int	ft_atoil(const char *str);
 void 	print_stack(t_stack *stack);
@@ -87,6 +94,7 @@ void	assign_index(t_stack **a);
 int		calc_max_bits(int n);
 void	complex_sort(t_stack **a, t_stack **b, t_counter *count);
 void	*ft_memset(void *s, int c, size_t n);
+int		parse_args(int argc, char *arg, t_opts opts, int number);
 
 
 

@@ -15,7 +15,7 @@ void print_stack(t_stack *stack)
 void free_stack(t_stack **stack)
 {
 	t_stack *temp;
-
+ 
 	if (!stack || !*stack)
 		return ;
 	while (*stack)
@@ -97,3 +97,4 @@ t_stack *init_stack(char **temp)
 	}
 	return (a);
 }
+

@@ -13,12 +13,13 @@ SRC_FILES = check_stack.c \
             ft_revrot.c \
             ft_rotate.c \
             ft_swap.c \
-            parcing.c \
+            parsing.c \
             push_swap_utils.c \
             push_swap.c\
 			comp_disorder.c\
 			check_disorder.c\
-			complex_sort.c
+			complex_sort.c\
+			bench.c
 
 SRCS 	= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS	= $(SRCS:.c=.o)

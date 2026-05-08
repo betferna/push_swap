@@ -23,7 +23,7 @@ int ft_check_valid(int argc, char **argvs)
 	return (1);
 }
 
-t_stack *ft_parce(int argc, char **argvs, t_stack *a)
+t_stack *ft_parse(int argc, char **argvs, t_stack *a)
 {
 	char **temp;
 	if (argc == 2)
