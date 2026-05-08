@@ -60,7 +60,7 @@ int main (int argc, char **argvs)
 	{
 		a = NULL;
 		b = NULL;
-		a = ft_parce(argc, argvs, a);
+		a = ft_parse(argc, argvs, a);
 //**** test ****/
 
 		printf("Disorder = %f\n", comp_disorder(&a));

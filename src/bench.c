@@ -18,3 +18,13 @@ int parse_args(int argc, char *argvs, t_opts *opts)
 	}
 	return (1);
 }
+
+/*
+create functions:
+1. returns chosen stragy name
+2. returns complexity level
+3. prints bench
+
+*/
+
+

@@ -52,25 +52,25 @@ void dispatch_strategy(t_stack **a, t_stack **b, t_strategy s)
 // call in main: dispatch_strategy(&a, &b, strategy);
 // t_strategy s = STRATEGY_ADAPTIVE; only override it if a flag is detected
 
-void adaptive_sort(t_stack **a, t_stack **b)
+t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count)
 {
 	double disorder;
 
     disorder = check_disorder(*a);
     if (disorder < 0.2)
     {
-        simple_sort(a, b);
-        ft_putstr_fd("sort strategy: simple sort\n", 1);//for testing, remove later
+        simple_sort(a, b, count);
+        return (STRATEGY_SIMPLE);
     }
     else if (disorder < 0.5)
     {
-        medium_sort(a, b);
-        ft_putstr_fd("sort strategy: medium sort\n", 1);//for testing, remove later
+        medium_sort(a, b, count);
+        return (STRATEGY_MEDIUM);
     }
     else
     {
-        complex_sort(a, b);
-        ft_putstr_fd("sort strategy: complex sort\n", 1);//for testing, remove later
+        complex_sort(a, b, count);
+        return (STRATEGY_COMPLEX);
     }
 }
 
