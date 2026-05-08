@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 18:35:08 by betferna          #+#    #+#             */
-/*   Updated: 2026/04/22 11:51:51 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/08 18:39:59 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_stack
+{
+	void			*content;
+	struct s_stack	*next;
+}					t_stack;
 
 /*** --------------------------- PART1 ----------------------------*/
 
@@ -72,7 +78,7 @@ void 	ft_putnbr_fd(int n, int fd);
 /*** --------------------------- PART3 ----------------------------*/
 t_list 	*ft_lstnew(void *content);
 void 	ft_lstadd_front(t_list **lst, t_list *new);
-int 	ft_lstsize(t_list *lst);
+int 	ft_lstsize(t_stack *lst);
 t_list 	*ft_lstlast(t_list *lst);
 void 	ft_lstadd_back(t_list **lst, t_list *new);
 void 	ft_lstdelone(t_list *lst, void (*del)(void *));

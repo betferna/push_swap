@@ -98,9 +98,10 @@ int main (int argc, char **argvs)
 		// print_stack(b);
 
 		print_stack(a);
-		complex_sort(&a, &b, count);
+		// complex_sort(&a, &b, count);
+		// print_stack(a);
+		three_sort(&a, count);
 		print_stack(a);
-
 	}
 	free_stack(&a);
 	free_stack(&b);

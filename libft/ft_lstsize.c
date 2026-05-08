@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: betferna <betferna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 18:39:12 by betferna          #+#    #+#             */
-/*   Updated: 2026/03/21 20:03:18 by betferna         ###   ########.fr       */
+/*   Updated: 2026/05/08 18:36:11 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_stack *lst)
 {
 	int		size;
-	t_list	*temp;
+	t_stack	*temp;
 
 	temp = lst;
 	if (lst == NULL)

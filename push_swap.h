@@ -94,7 +94,13 @@ void	assign_index(t_stack **a);
 int		calc_max_bits(int n);
 void	complex_sort(t_stack **a, t_stack **b, t_counter *count);
 void	*ft_memset(void *s, int c, size_t n);
-int		parse_args(int argc, char *arg, t_opts opts, int number);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
+int		parse_args(int argc, char **arg, t_opts *opts);
+void	three_sort(t_stack **stack, t_counter *count);
+int		ft_lstsize(t_stack *lst);
+int 	p_flag(char *arg, t_strategy *output);
+void simple_sort(t_stack **a, t_stack **b, t_counter *count);
+void five_sort(t_stack **a, t_stack **b, t_counter *count);
 
 
 
