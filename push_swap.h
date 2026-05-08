@@ -101,6 +101,7 @@ int		ft_lstsize(t_stack *lst);
 int 	p_flag(char *arg, t_strategy *output);
 void simple_sort(t_stack **a, t_stack **b, t_counter *count);
 void five_sort(t_stack **a, t_stack **b, t_counter *count);
+int is_flag(char *str);
 
 
 

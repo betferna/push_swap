@@ -8,7 +8,7 @@ int ft_check_valid(int argc, char **argvs)
 	i = 1;
 	while (i < argc)
     {
-        if (!is_numb(argvs[i]))
+        if ((!is_numb(argvs[i]) && !is_flag(argvs[i])))
         {
             write(2, "Error\n", 6);
             return (0);
@@ -21,6 +21,18 @@ int ft_check_valid(int argc, char **argvs)
             return (0);
     }
 	return (1);
+}
+
+int is_flag(char *str)
+{
+	if (!str)
+		return (0);
+	if (str[0] == '-' && str[1] == '-')
+	{
+		
+		return (1);
+	}
+	return (0);
 }
 
 t_stack *ft_parse(int argc, char **argvs, t_stack *a)

@@ -92,6 +92,8 @@ t_stack *init_stack(char **temp)
 		return (NULL);
 	while (temp[i])
 	{
+		if (is_flag(temp[i]))
+			i++;
 		ft_stack_add_back(&a, ft_stack_new((int)ft_atoil(temp[i])));
 		i++;
 	}
