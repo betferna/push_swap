@@ -65,9 +65,10 @@ int main (int argc, char **argvs)
 		a = NULL;
 		b = NULL;
 		a = ft_parse(argc, argvs, a, opts);
+		printf("Disorder = %f\n", comp_disorder(&a));
+		dispatch_strategy(&a, &b, opts, count);
 //**** test ****/
 
-		printf("Disorder = %f\n", comp_disorder(&a));
 		// printf("Disorder 2 = %f\n", check_disorder(&a));	
 		// sa(&a, count);
 		// print_stack(a);
@@ -104,9 +105,9 @@ int main (int argc, char **argvs)
 		print_stack(a);
 		// complex_sort(&a, &b, count);
 		// print_stack(a);
-		simple_sort(&a,&b, count);
-		print_stack(a);
-		print_stack(b);
+		// simple_sort(&a,&b, count);
+		// print_stack(a);
+		// print_stack(b);
 
 	}
 	free_stack(&a);

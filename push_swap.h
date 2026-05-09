@@ -99,10 +99,11 @@ int		parse_args(int argc, char **arg, t_opts *opts);
 void	three_sort(t_stack **stack, t_counter *count);
 int		ft_lstsize(t_stack *lst);
 int 	p_flag(char *arg, t_opts *opts);
-void simple_sort(t_stack **a, t_stack **b, t_counter *count);
-void five_sort(t_stack **a, t_stack **b, t_counter *count);
-int is_flag(char *str);
-
+void 	simple_sort(t_stack **a, t_stack **b, t_counter *count);
+void 	five_sort(t_stack **a, t_stack **b, t_counter *count);
+int 	is_flag(char *str);
+void dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts, t_counter *count);
+void	ft_putstr_fd(char *s, int fd);
 
 
 

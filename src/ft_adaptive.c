@@ -22,26 +22,29 @@ int p_flag(char *arg, t_opts *opts)
     return (1);
 }
 
-// void dispatch_strategy(t_stack **a, t_stack **b, t_strategy s)
-// {
-//     if (s == STRATEGY_SIMPLE)
-//     {
-//         simple_sort(a, b, );
-//         ft_putstr_fd("sort strategy: simple sort\n", 1);//for testing, remove later
-//     }
-//     else if (s == STRATEGY_MEDIUM)
-//     {
-//         medium_sort(a, b);
-//         ft_putstr_fd("sort strategy: medium sort\n", 1);//for testing, remove later
-//     }
-//     else if (s == STRATEGY_COMPLEX)
-//     {
-//         complex_sort(a, b);
-//         ft_putstr_fd("sort strategy: complex sort\n", 1);//for testing, remove later
-//     }
-//     else if (s == STRATEGY_ADAPTIVE)
-//         // adaptive_sort(a, b);
-// }
+void dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts, t_counter *count)
+{
+    if (opts->strategy == STRATEGY_SIMPLE)
+    {
+        simple_sort(a, b, count);
+        ft_putstr_fd("sort strategy: simple sort\n", 1);//for testing, remove later
+    }
+    else if (opts->strategy == STRATEGY_MEDIUM)
+    {
+        // medium_sort(a, b, count);
+        ft_putstr_fd("sort strategy: medium sort\n", 1);//for testing, remove later
+    }
+    else if (opts->strategy == STRATEGY_COMPLEX)
+    {
+        complex_sort(a, b, count);
+        ft_putstr_fd("sort strategy: complex sort\n", 1);//for testing, remove later
+    }
+    else if (opts->strategy == STRATEGY_ADAPTIVE)
+        // adaptive_sort(a, b, count);
+        ft_putstr_fd("sort strategy: adaptive sort\n", 1);//for testing, remove later
+
+}
+
 // call in main: dispatch_strategy(&a, &b, strategy);
 // t_strategy s = STRATEGY_ADAPTIVE; only override it if a flag is detected
 
