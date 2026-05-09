@@ -13,10 +13,7 @@ int p_flag(char *arg, t_opts *opts)
     else if (ft_strncmp(arg, "--adaptive", 10) == 0)
         opts->strategy = STRATEGY_ADAPTIVE;
     else if (ft_strncmp(arg, "--bench", 7) == 0)
-    {
         opts->bench = 1;
-        // print_bench(**a,*opts, *count, opts);
-    }
     else
         return (0);
     return (1);
@@ -73,12 +70,6 @@ t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count)
     }
 }
 
-// void adaptive_sort(t_stack **a, t_stack **b)
-// {
-
-// }
-
-
 // int parse_args(int argc, char **argvs, t_opts *opts)
 // {
 // 	int i;
@@ -99,21 +90,21 @@ t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count)
 // 	return (1);
 // }
 
-// void print_bench(t_stack **a, t_opts *opts, t_counter *count, t_strategy *opts)
-// {
-//     if (!opts->bench)
-//         return ;
-//     // fprintf(stderr, "[bench] disorder:  %.2f%%\n", comp_disorder(a) * 100);
-//     // if (opts->strategy == STRATEGY_ADAPTIVE)
-//     //     fprintf(stderr, "[bench] strategy:  Adaptive / O(n√n)\n");
-//     // else
-//     //     fprintf(stderr, "[bench] strategy:  Default / O(n2)\n");
-//     // fprintf(stderr, "[bench] total_ops: %d\n", count->total);
-//     // fprintf(stderr, "[bench] sa: %2d  sb: %2d  ss: %2d  pa: %2d  pb: %2d\n",
-//     //         count->sa, count->sb, count->ss, count->pa, count->pb);
-//     // fprintf(stderr, "[bench] ra: %2d  rb: %2d  rr: %2d  rra: %2d  rrb: %2d  rrr: %2d\n",
-//             // count->ra, count->rb, count->rr, count->rra, count->rrb, count->rrr);
-// }
+void print_bench(t_stack **a, t_opts *opts, t_counter *count)
+{
+    if (!opts->bench)
+        return ;
+    ft_printf("[bench] disorder:  %.2f%%\n", comp_disorder(a) * 100);
+    if (opts->strategy == STRATEGY_ADAPTIVE)
+        ft_printf("[bench] strategy:  Adaptive / O(n√n)\n");
+    else
+        ft_printf("[bench] strategy:  Default / O(n2)\n");
+    ft_printf("[bench] total_ops: %d\n", count->total);
+    ft_printf("[bench] sa: %2d  sb: %2d  ss: %2d  pa: %2d  pb: %2d\n",
+            count->sa, count->sb, count->ss, count->pa, count->pb);
+    ft_printf("[bench] ra: %2d  rb: %2d  rr: %2d  rra: %2d  rrb: %2d  rrr: %2d\n",
+            count->ra, count->rb, count->rr, count->rra, count->rrb, count->rrr);
+}
 
 /*
 create functions:

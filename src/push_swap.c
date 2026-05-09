@@ -105,6 +105,8 @@ int main (int argc, char **argvs)
 		// print_stack(b);
 
 		print_stack(a);
+		if (opts->bench == 1)
+			print_bench(&a,opts,count);
 		// complex_sort(&a, &b, count);
 		// print_stack(a);
 		// simple_sort(&a,&b, count);

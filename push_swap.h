@@ -102,10 +102,11 @@ int 	p_flag(char *arg, t_opts *opts);
 void 	simple_sort(t_stack **a, t_stack **b, t_counter *count);
 void 	five_sort(t_stack **a, t_stack **b, t_counter *count);
 int 	is_flag(char *str);
-void dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts, t_counter *count);
+void 	dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts, t_counter *count);
 void	ft_putstr_fd(char *s, int fd);
 t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count);
 int		ft_printf(const char *format, ...);
+void 	print_bench(t_stack **a, t_opts *opts, t_counter *count);
 
 
 
