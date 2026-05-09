@@ -81,7 +81,7 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new)
 	last->next = new;
 }
 
-t_stack *init_stack(char **temp)
+t_stack *init_stack(char **temp, t_opts *opts)
 {
 	t_stack *a;
 	int 	i;
@@ -92,11 +92,25 @@ t_stack *init_stack(char **temp)
 		return (NULL);
 	while (temp[i])
 	{
-		if (is_flag(temp[i]))
+		if (p_flag(temp[i], opts))
+		{
 			i++;
+			continue;
+		}
 		ft_stack_add_back(&a, ft_stack_new((int)ft_atoil(temp[i])));
 		i++;
 	}
 	return (a);
 }
 
+
+// int is_flag(char *str)
+// {
+// 	if (!str)
+// 		return (0);
+// 	if (str[0] == '-' && str[1] == '-')
+// 	{	
+// 		return (1);
+// 	}
+// 	return (0);
+// }

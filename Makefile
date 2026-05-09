@@ -19,8 +19,9 @@ SRC_FILES = check_stack.c \
 			ft_adaptive.c\
 			comp_disorder.c\
 			complex_sort.c\
-			simple_sort.c\
-			bench.c
+			simple_sort.c
+
+
 
 SRCS 	= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS	= $(SRCS:.c=.o)

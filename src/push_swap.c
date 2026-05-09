@@ -8,7 +8,7 @@ int ft_check_valid(int argc, char **argvs)
 	i = 1;
 	while (i < argc)
     {
-        if ((!is_numb(argvs[i]) && !is_flag(argvs[i])))
+        if (!is_numb_flag(argvs[i]))
         {
             write(2, "Error\n", 6);
             return (0);
@@ -23,19 +23,7 @@ int ft_check_valid(int argc, char **argvs)
 	return (1);
 }
 
-int is_flag(char *str)
-{
-	if (!str)
-		return (0);
-	if (str[0] == '-' && str[1] == '-')
-	{
-		
-		return (1);
-	}
-	return (0);
-}
-
-t_stack *ft_parse(int argc, char **argvs, t_stack *a)
+t_stack *ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
 {
 	char **temp;
 	if (argc == 2)
@@ -45,7 +33,7 @@ t_stack *ft_parse(int argc, char **argvs, t_stack *a)
 	else
 		temp = argvs + 1;	
 
-	a = init_stack(temp);
+	a = init_stack(temp, opts);
 	if (!a)
 	{
 		if (argc == 2)
@@ -63,16 +51,20 @@ int main (int argc, char **argvs)
 	t_stack *a;
 	t_stack *b;
 	t_counter *count;
+	t_opts *opts;
 
 	count = malloc(sizeof(t_counter));
 	if (!count)
+		return (1);
+	opts = malloc(sizeof(t_opts));
+	if (!opts)
 		return (1);
 	ft_memset(count, 0, sizeof(t_counter));
 	if (ft_check_valid(argc, argvs))
 	{
 		a = NULL;
 		b = NULL;
-		a = ft_parse(argc, argvs, a);
+		a = ft_parse(argc, argvs, a, opts);
 //**** test ****/
 
 		printf("Disorder = %f\n", comp_disorder(&a));

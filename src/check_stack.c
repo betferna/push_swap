@@ -11,36 +11,48 @@ int	ft_isdigit(int c)
 	return (1);
 }
 
-int is_numb(char *str)
+int ft_isflag(char *arg)
+{
+	if (!arg || (arg[0] != '-' && arg[1] != '-'))
+        return (0);
+    else if ((ft_strncmp(arg, "--simple", 9) == 0) ||
+		(ft_strncmp(arg, "--medium", 8) == 0) ||
+		(ft_strncmp(arg, "--complex", 9) == 0) ||
+		(ft_strncmp(arg, "--adaptive", 10) == 0) ||
+		(ft_strncmp(arg, "--bench", 7) == 0))
+		return (1);
+	return (0);
+}
+
+int is_numb_flag(char *str)
 {
 	int i;
 
 	i = 0;
 	if (!str || !str[0])
 		return (0);
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if (!(ft_isdigit(str[i])))
-			return (0);
+		if ((ft_isdigit(str[0])) || (ft_isflag(str)))
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
-int all_numbers(char **argvs)
-{
-	int i;
 
-	i = 0;
-	while (*argvs[i] != '\0')
-	{
-		if (!is_numb(argvs[i]))
-			return (0);
-		i++;
-	}
-	return (1);		
-}
+// int all_numbers(char **argvs)
+// {
+// 	int i;
+
+// 	i = 0;
+// 	while (*argvs[i])
+// 	{
+// 		if (!is_numb_flag(argvs[i]))
+// 			return (0);
+// 		i++;
+// 	}
+// 	return (1);		
+// }
 
 int no_duplicate(char **argvs)
 {
