@@ -90,19 +90,19 @@ t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count)
 // 	return (1);
 // }
 
-void print_bench(t_stack **a, t_opts *opts, t_counter *count)
+void print_bench(t_stack **a, t_opts *opts, t_counter *count, int disorder)
 {
     if (!opts->bench)
         return ;
-    ft_printf("[bench] disorder:  %.2f%%\n", comp_disorder(a) * 100);
+    ft_printf("[bench] disorder:  %i%%\n", disorder);
     if (opts->strategy == STRATEGY_ADAPTIVE)
         ft_printf("[bench] strategy:  Adaptive / O(n√n)\n");
     else
         ft_printf("[bench] strategy:  Default / O(n2)\n");
     ft_printf("[bench] total_ops: %d\n", count->total);
-    ft_printf("[bench] sa: %2d  sb: %2d  ss: %2d  pa: %2d  pb: %2d\n",
+    ft_printf("[bench] sa: %i  sb: %i  ss: %i  pa: %i  pb: %i\n",
             count->sa, count->sb, count->ss, count->pa, count->pb);
-    ft_printf("[bench] ra: %2d  rb: %2d  rr: %2d  rra: %2d  rrb: %2d  rrr: %2d\n",
+    ft_printf("[bench] ra: %i  rb: %i  rr: %i  rra: %i  rrb: %i  rrr: %i\n",
             count->ra, count->rb, count->rr, count->rra, count->rrb, count->rrr);
 }
 

@@ -67,7 +67,7 @@ int main (int argc, char **argvs)
 		b = NULL;
 		a = ft_parse(argc, argvs, a, opts);
 		disorder =  comp_disorder(&a) * 100;
-		ft_printf("Disorder = %i %% \n", disorder);
+		// ft_printf("Disorder = %i %% \n", disorder);
 		dispatch_strategy(&a, &b, opts, count);
 //**** test ****/
 
@@ -106,7 +106,7 @@ int main (int argc, char **argvs)
 
 		print_stack(a);
 		if (opts->bench == 1)
-			print_bench(&a,opts,count);
+			print_bench(&a,opts,count,disorder);
 		// complex_sort(&a, &b, count);
 		// print_stack(a);
 		// simple_sort(&a,&b, count);
