@@ -6,6 +6,13 @@ need libft for libft functions
 */
 int	ft_isdigit(int c)
 {
+	int i;
+
+	i = 0;
+	if (c == '-' || c == '+')
+        i++;
+	if (!c)
+        return (0);
 	if (!((c >= '0' && c <= '9')))
 		return (0);
 	return (1);
@@ -31,7 +38,7 @@ int is_numb_flag(char *str)
 	i = 0;
 	if (!str || !str[0])
 		return (0);
-	while (str[i])
+	if (str[i])
 	{
 		if ((ft_isdigit(str[0])) || (ft_isflag(str)))
 			return (1);
