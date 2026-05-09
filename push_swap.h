@@ -44,7 +44,7 @@ typedef struct s_opts
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-// # include "lib/libft.h"
+// # include "libft/libft.h"
 
 char	**ft_split(char const *s, char c);
 void	ft_stack_add_back(t_stack **stack, t_stack *new);
@@ -104,6 +104,8 @@ void 	five_sort(t_stack **a, t_stack **b, t_counter *count);
 int 	is_flag(char *str);
 void dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts, t_counter *count);
 void	ft_putstr_fd(char *s, int fd);
+t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count);
+int		ft_printf(const char *format, ...);
 
 
 

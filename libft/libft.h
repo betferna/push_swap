@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 18:35:08 by betferna          #+#    #+#             */
-/*   Updated: 2026/05/08 18:39:59 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/09 12:16:40 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,13 @@ void 	ft_lstclear(t_list **lst, void (*del)(void *));
 void 	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list 	*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+/***  --------------------------- PRINTF -------------------------- */
 int	ft_printf(const char *format, ...);
 int	ft_print_ptr(unsigned long long ptr);
 int	ft_print_int(int n);
 int	ft_print_x(unsigned int n);
 int	ft_print_upper_x(unsigned int n);
+int	ft_putbase_fd(unsigned long long nbr, char *base, int fd);
 
 #endif

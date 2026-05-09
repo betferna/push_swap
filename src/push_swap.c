@@ -52,6 +52,7 @@ int main (int argc, char **argvs)
 	t_stack *b;
 	t_counter *count;
 	t_opts *opts;
+	int disorder;
 
 	count = malloc(sizeof(t_counter));
 	if (!count)
@@ -65,7 +66,8 @@ int main (int argc, char **argvs)
 		a = NULL;
 		b = NULL;
 		a = ft_parse(argc, argvs, a, opts);
-		printf("Disorder = %f\n", comp_disorder(&a));
+		disorder =  comp_disorder(&a) * 100;
+		ft_printf("Disorder = %i %% \n", disorder);
 		dispatch_strategy(&a, &b, opts, count);
 //**** test ****/
 
