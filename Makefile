@@ -16,7 +16,7 @@ SRC_FILES = check_stack.c \
             parsing.c \
             push_swap_utils.c \
             push_swap.c\
-			ft_adaptive.c\
+			adaptive.c\
 			comp_disorder.c\
 			complex_sort.c\
 			simple_sort.c

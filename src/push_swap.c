@@ -3,8 +3,7 @@
 int ft_check_valid(int argc, char **argvs)
 {
 	int i;
-	if (argc < 2)
-		return (0);
+
 	i = 1;
 	while (i < argc)
     {
@@ -50,25 +49,31 @@ int main (int argc, char **argvs)
 {
 	t_stack *a;
 	t_stack *b;
-	t_counter *count;
-	t_opts *opts;
-	int disorder;
+	t_counter count;
+	t_opts opts;
+	double disorder;
 
-	count = malloc(sizeof(t_counter));
-	if (!count)
+	// count = malloc(sizeof(t_counter));
+	// if (!count)
+	// 	return (1);
+	// opts = malloc(sizeof(t_opts));
+	// if (!opts)
+	// 	return (1);
+	if (argc <2)
+		return (0);
+	ft_memset(&count, 0, sizeof(t_counter));
+	opts.strategy = STRATEGY_ADAPTIVE;
+	opts.bench = 0;
+	a = NULL;
+	b = NULL;
+	if (!ft_check_valid(argc, argvs))
 		return (1);
-	opts = malloc(sizeof(t_opts));
-	if (!opts)
+	a = ft_parse(argc, argvs, a, &opts);
+	if (!a)
 		return (1);
-	ft_memset(count, 0, sizeof(t_counter));
-	if (ft_check_valid(argc, argvs))
-	{
-		a = NULL;
-		b = NULL;
-		a = ft_parse(argc, argvs, a, opts);
-		disorder =  comp_disorder(&a) * 100;
+	disorder =  comp_disorder(&a);
 		// ft_printf("Disorder = %i %% \n", disorder);
-		dispatch_strategy(&a, &b, opts, count);
+		dispatch_strategy(&a, &b, &opts, &count);
 //**** test ****/
 
 		// printf("Disorder 2 = %f\n", check_disorder(&a));	
@@ -104,16 +109,14 @@ int main (int argc, char **argvs)
 		// print_stack(a);
 		// print_stack(b);
 
-		print_stack(a);
-		if (opts->bench == 1)
-			print_bench(&a,opts,count,disorder);
+		// print_stack(a);
+		print_bench(&opts,&count,disorder);
 		// complex_sort(&a, &b, count);
 		// print_stack(a);
 		// simple_sort(&a,&b, count);
 		// print_stack(a);
 		// print_stack(b);
 
-	}
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

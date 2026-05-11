@@ -106,7 +106,7 @@ void 	dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts, t_counter *count
 void	ft_putstr_fd(char *s, int fd);
 t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count);
 int		ft_printf(const char *format, ...);
-void 	print_bench(t_stack **a, t_opts *opts, t_counter *count, int disorder);
+void	print_bench(t_opts *opts, t_counter *count, double disorder);
 
 
 
