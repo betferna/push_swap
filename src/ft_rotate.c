@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-//move head to back:
 void	rotate(t_stack **stack)
 {
 	t_stack *head;

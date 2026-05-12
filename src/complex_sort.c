@@ -66,5 +66,3 @@ void complex_sort(t_stack **a, t_stack **b, t_counter *count)
         bit_position++;
     }
 }
-    // if bit is 0 push to b (pb)
-    // if bit is 1 rotate in A (ra)

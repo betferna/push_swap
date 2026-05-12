@@ -3,8 +3,12 @@
 int ft_check_valid(int argc, char **argvs)
 {
 	int i;
+	int numbers_start;
 
 	i = 1;
+	while (i < argc && ft_isflag(argvs[i]))
+		i++;
+	numbers_start = i;
 	while (i < argc)
     {
         if (!is_numb_flag(argvs[i]))
@@ -14,7 +18,7 @@ int ft_check_valid(int argc, char **argvs)
         }
         i++;
     }
-	if (!no_duplicate(argvs+1))
+	if (!no_duplicate(argvs + numbers_start))
 	{
             write(2, "Error\n", 6);
             return (0);
@@ -109,7 +113,7 @@ int main (int argc, char **argvs)
 		// print_stack(a);
 		// print_stack(b);
 
-		// print_stack(a);
+		print_stack(a);
 		print_bench(&opts,&count,disorder);
 		// complex_sort(&a, &b, count);
 		// print_stack(a);

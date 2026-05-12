@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-//move the tail to the front:
 void	ft_revrot(t_stack **stack)
 {
 	t_stack *tail;

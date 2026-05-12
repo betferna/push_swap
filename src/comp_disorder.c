@@ -7,7 +7,7 @@ double comp_disorder(t_stack **stack)
 	t_stack *i = *stack;
 	t_stack *j;
 	if (!stack || !*stack)
-		return (-1.0);
+		return (0.0);
 	while (i != NULL)
 	{
 		j = i->next;

@@ -55,7 +55,6 @@ t_stack	*ft_stack_new(int value)
 	return (node);
 }
 
-//new stack node in front:
 void ft_stack_add_front(t_stack **stack, t_stack *newhead)
 {
 	if (!stack || !newhead)
@@ -103,14 +102,3 @@ t_stack *init_stack(char **temp, t_opts *opts)
 	return (a);
 }
 
-
-// int is_flag(char *str)
-// {
-// 	if (!str)
-// 		return (0);
-// 	if (str[0] == '-' && str[1] == '-')
-// 	{	
-// 		return (1);
-// 	}
-// 	return (0);
-// }

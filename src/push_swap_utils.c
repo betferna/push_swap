@@ -17,22 +17,6 @@ int	ft_stacksize(t_stack *stack)
 	return (size);
 }
 
-// void	ft_lstclear(t_stack **lst, void (*del)(void *))
-// {
-// 	t_list	*temp;
-
-// 	if (lst == NULL)
-// 		return ;
-// 	while (*lst)
-// 	{
-// 		temp = (*lst)->next;
-// 		del((*lst)->content);
-// 		free(*lst);
-// 		*lst = temp;
-// 	}
-// 	*lst = NULL;
-// }
-
 // ********************* SPLIT ****************************//
 
 static int	count_words(const char *str, char c)
@@ -115,7 +99,6 @@ char	**ft_split(char const *s, char c)
 	arr[j] = NULL;
 	return (arr);
 }
-
 
 long long int	ft_atoil(const char *str)
 {

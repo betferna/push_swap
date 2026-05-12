@@ -47,20 +47,6 @@ int is_numb_flag(char *str)
 	return (0);
 }
 
-// int all_numbers(char **argvs)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while (*argvs[i])
-// 	{
-// 		if (!is_numb_flag(argvs[i]))
-// 			return (0);
-// 		i++;
-// 	}
-// 	return (1);		
-// }
-
 int no_duplicate(char **argvs)
 {
 	int i;
