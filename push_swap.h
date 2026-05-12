@@ -6,7 +6,7 @@
 /*   By: marad <marad@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 11:11:47 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 11:23:29 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/12 13:04:03 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,6 @@ int				ft_printf(const char *format, ...);
 void			print_bench(t_opts *opts, t_counter *count, double disorder);
 char			*chosen_strategy(t_strategy s);
 char			*complexity_strategy(t_strategy s);
-
+void			complex_helper(t_stack **a, t_stack **b,
+					t_counter *count, int n);
 #endif
