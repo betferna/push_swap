@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   parsing.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: marad <marad@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:13:43 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/12 12:14:29 by marad         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void print_stack(t_stack *stack)
+void	print_stack(t_stack *stack)
 {
 	if (!stack)
 		return ;
-    while (stack)
-    {
-        printf("%d\n", stack->value);
-        stack = stack->next;
-    }
-    printf("\n");
+	while (stack)
+	{
+		printf("%d\n", stack->value);
+		stack = stack->next;
+	}
+	printf("\n");
 }
 
 t_stack	*ft_stack_new(int value)
@@ -25,7 +37,7 @@ t_stack	*ft_stack_new(int value)
 	return (node);
 }
 
-void ft_stack_add_front(t_stack **stack, t_stack *newhead)
+void	ft_stack_add_front(t_stack **stack, t_stack *newhead)
 {
 	if (!stack || !newhead)
 		return ;
@@ -50,10 +62,10 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new)
 	last->next = new;
 }
 
-t_stack *init_stack(char **temp, t_opts *opts)
+t_stack	*init_stack(char **temp, t_opts *opts)
 {
-	t_stack *a;
-	int 	i;
+	t_stack	*a;
+	int		i;
 
 	a = NULL;
 	i = 0;
@@ -64,11 +76,10 @@ t_stack *init_stack(char **temp, t_opts *opts)
 		if (p_flag(temp[i], opts))
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		ft_stack_add_back(&a, ft_stack_new((int)ft_atoil(temp[i])));
 		i++;
 	}
 	return (a);
 }
-

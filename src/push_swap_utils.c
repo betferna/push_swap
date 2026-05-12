@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   push_swap_utils.c                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: marad <marad@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:14:42 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/12 12:15:31 by marad         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	count_words(const char *str, char c)
@@ -80,4 +92,3 @@ char	**ft_split(char const *s, char c)
 	arr[j] = NULL;
 	return (arr);
 }
-

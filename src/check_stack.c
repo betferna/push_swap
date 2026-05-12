@@ -1,30 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   check_stack.c                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: marad <marad@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 11:56:54 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/12 12:00:39 by marad         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_isdigit(int c)
 {
 	if (!c)
-        return (0);
+		return (0);
 	if (!((c >= '0' && c <= '9')))
 		return (0);
 	return (1);
 }
 
-int ft_isflag(char *arg)
+int	ft_isflag(char *arg)
 {
 	if (!arg || (arg[0] != '-' && arg[1] != '-'))
-        return (0);
-    else if ((ft_strncmp(arg, "--simple", 9) == 0) ||
-		(ft_strncmp(arg, "--medium", 8) == 0) ||
-		(ft_strncmp(arg, "--complex", 9) == 0) ||
-		(ft_strncmp(arg, "--adaptive", 10) == 0) ||
-		(ft_strncmp(arg, "--bench", 7) == 0))
+		return (0);
+	else if ((ft_strncmp(arg, "--simple", 9) == 0)
+		|| (ft_strncmp(arg, "--medium", 8) == 0)
+		|| (ft_strncmp(arg, "--complex", 9) == 0)
+		|| (ft_strncmp(arg, "--adaptive", 10) == 0)
+		|| (ft_strncmp(arg, "--bench", 7) == 0))
 		return (1);
 	return (0);
 }
 
-int is_numb_flag(char *str)
+int	is_numb_flag(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str || !str[0])
@@ -38,12 +50,12 @@ int is_numb_flag(char *str)
 	return (0);
 }
 
-int no_duplicate(char **argvs)
+int	no_duplicate(char **argvs)
 {
-	int i;
-	int j;
-	long long first;
-	long long second;
+	int			i;
+	int			j;
+	long long	first;
+	long long	second;
 
 	i = 0;
 	while (argvs[i])
@@ -62,9 +74,9 @@ int no_duplicate(char **argvs)
 	return (1);
 }
 
-int range_check(char **str)
+int	range_check(char **str)
 {
-	long long n;
+	long long	n;
 
 	n = ft_atoil((const char *)*str);
 	if (n < INT_MIN || n > INT_MAX)

@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_revrot.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: marad <marad@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:07:15 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/12 12:07:56 by marad         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_revrot(t_stack **stack)
 {
-	t_stack *tail;
-	t_stack *new_tail;
+	t_stack	*tail;
+	t_stack	*new_tail;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	tail = *stack;
 	while (tail -> next != NULL)
 	{
@@ -18,7 +30,7 @@ void	ft_revrot(t_stack **stack)
 	new_tail->next = NULL;
 }
 
-void rra(t_stack **a, t_counter *count)
+void	rra(t_stack **a, t_counter *count)
 {
 	ft_revrot(a);
 	write (1, "rra\n", 4);
@@ -26,7 +38,7 @@ void rra(t_stack **a, t_counter *count)
 	count->total += 1;
 }
 
-void rrb(t_stack **b, t_counter *count)
+void	rrb(t_stack **b, t_counter *count)
 {
 	ft_revrot(b);
 	write (1, "rrb\n", 4);
@@ -34,7 +46,7 @@ void rrb(t_stack **b, t_counter *count)
 	count->total += 1;
 }
 
-void rrr(t_stack **a, t_stack **b, t_counter *count)
+void	rrr(t_stack **a, t_stack **b, t_counter *count)
 {
 	ft_revrot(a);
 	ft_revrot(b);
@@ -42,4 +54,3 @@ void rrr(t_stack **a, t_stack **b, t_counter *count)
 	count->rrr += 1;
 	count->total += 1;
 }
-

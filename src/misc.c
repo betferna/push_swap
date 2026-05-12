@@ -1,11 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   misc.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: marad <marad@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:12:26 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/12 12:21:01 by marad         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-double comp_disorder(t_stack **stack)
+double	comp_disorder(t_stack **stack)
 {
-	int mistakes = 0;
-	int total_pairs = 0;
-	t_stack *i = *stack;
-	t_stack *j;
+	int		mistakes;
+	int		total_pairs;
+	t_stack	*i;
+	t_stack	*j;
+
+	i = *stack;
+	mistakes = 0;
+	total_pairs = 0;
 	if (!stack || !*stack)
 		return (0.0);
 	while (i != NULL)
@@ -14,16 +30,16 @@ double comp_disorder(t_stack **stack)
 		while (j != NULL)
 		{
 			if (i->value > j->value)
-                mistakes++;
-            total_pairs++;
-            j = j->next;
+				mistakes++;
+			total_pairs++;
+			j = j->next;
 		}
 		i = i->next;
 	}
 	return ((double)mistakes / total_pairs);
 }
 
-int is_stack_stored(t_stack *stack)
+int	is_stack_stored(t_stack *stack)
 {
 	while (stack->next != NULL)
 	{
@@ -34,10 +50,10 @@ int is_stack_stored(t_stack *stack)
 	return (1);
 }
 
-void free_stack(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
-	t_stack *temp;
- 
+	t_stack	*temp;
+
 	if (!stack || !*stack)
 		return ;
 	while (*stack)
@@ -48,9 +64,9 @@ void free_stack(t_stack **stack)
 	}
 }
 
-void free_temp(char **temp)
+void	free_temp(char **temp)
 {
-	int i;
+	int	i;
 
 	if (!temp)
 		return ;

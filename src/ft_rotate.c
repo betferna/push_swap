@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_rotate.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: marad <marad@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:08:12 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/12 12:09:23 by marad         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rotate(t_stack **stack)
 {
-	t_stack *head;
+	t_stack	*head;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	head = *stack;
 	*stack = head->next;
 	ft_stack_add_back(stack, head);
 	head->next = NULL;
 }
 
-void ra(t_stack **a, t_counter *count)
+void	ra(t_stack **a, t_counter *count)
 {
 	rotate(a);
 	write (1, "ra\n", 3);
@@ -20,7 +32,7 @@ void ra(t_stack **a, t_counter *count)
 	count->total += 1;
 }
 
-void rb(t_stack **b, t_counter *count)
+void	rb(t_stack **b, t_counter *count)
 {
 	rotate(b);
 	write (1, "rb\n", 3);
@@ -28,7 +40,7 @@ void rb(t_stack **b, t_counter *count)
 	count->total += 1;
 }
 
-void rr(t_stack **a, t_stack **b, t_counter *count)
+void	rr(t_stack **a, t_stack **b, t_counter *count)
 {
 	rotate(a);
 	rotate(b);

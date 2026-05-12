@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_swap.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: marad <marad@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:09:48 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/12 12:10:50 by marad         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void ft_swap(t_stack **stack)
+void	ft_swap(t_stack **stack)
 {
-	int tmp;
+	int	tmp;
 
-	if (!stack || !*stack	)
+	if (!stack || !*stack)
 		return ;
 	tmp = (*stack)->next->value;
 	(*stack)->next->value = (*stack)->value;
 	(*stack)->value = tmp;
 }
 
-void sa(t_stack **a, t_counter *count)
+void	sa(t_stack **a, t_counter *count)
 {
 	if (!a || !*a)
 		return ;
@@ -21,7 +33,7 @@ void sa(t_stack **a, t_counter *count)
 	count->total += 1;
 }
 
-void sb(t_stack **b, t_counter *count)
+void	sb(t_stack **b, t_counter *count)
 {
 	if (!b)
 		return ;
@@ -31,7 +43,7 @@ void sb(t_stack **b, t_counter *count)
 	count->total += 1;
 }
 
-void ss(t_stack **a, t_stack **b, t_counter *count)
+void	ss(t_stack **a, t_stack **b, t_counter *count)
 {
 	if (!a || !b)
 		return ;

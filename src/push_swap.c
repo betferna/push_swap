@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   push_swap.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: marad <marad@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:15:38 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/12 12:18:07 by marad         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 long long int	ft_atoil(const char *str)
@@ -29,42 +41,42 @@ long long int	ft_atoil(const char *str)
 	return ((long long int)min * res);
 }
 
-int ft_check_valid(int argc, char **argvs)
+int	ft_check_valid(int argc, char **argvs)
 {
-	int i;
-	int numbers_start;
+	int	i;
+	int	numbers_start;
 
 	i = 1;
 	while (i < argc && ft_isflag(argvs[i]))
 		i++;
 	numbers_start = i;
 	while (i < argc)
-    {
-        if (!is_numb_flag(argvs[i]))
-        {
-            write(2, "Error\n", 6);
-            return (0);
-        }
-        i++;
-    }
+	{
+		if (!is_numb_flag(argvs[i]))
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		i++;
+	}
 	if (!no_duplicate(argvs + numbers_start))
 	{
-            write(2, "Error\n", 6);
-            return (0);
-    }
+		write(2, "Error\n", 6);
+		return (0);
+	}
 	return (1);
 }
 
-t_stack *ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
+t_stack	*ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
 {
-	char **temp;
+	char	**temp;
+
 	if (argc == 2)
 	{
 		temp = ft_split(argvs[1], ' ');
 	}
 	else
-		temp = argvs + 1;	
-
+		temp = argvs + 1;
 	a = init_stack(temp, opts);
 	if (!a)
 	{
@@ -78,13 +90,13 @@ t_stack *ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
 	return (a);
 }
 
-int main (int argc, char **argvs)
+int	main(int argc, char **argvs)
 {
-	t_stack *a;
-	t_stack *b;
-	t_counter count;
-	t_opts opts;
-	double disorder;
+	t_stack		*a;
+	t_stack		*b;
+	t_counter	count;
+	t_opts		opts;
+	double		disorder;
 
 	// count = malloc(sizeof(t_counter));
 	// if (!count)
@@ -154,4 +166,3 @@ int main (int argc, char **argvs)
 	free_stack(&b);
 	return (0);
 }
-
