@@ -1,16 +1,7 @@
 #include "push_swap.h"
 
-/*
-all functions return 1 if positive, 0 is faulty
-need libft for libft functions
-*/
 int	ft_isdigit(int c)
 {
-	// int i;
-
-	// i = 0;
-	// if (c == '-' || c == '+')
-    //     i++;
 	if (!c)
         return (0);
 	if (!((c >= '0' && c <= '9')))
@@ -78,16 +69,5 @@ int range_check(char **str)
 	n = ft_atoil((const char *)*str);
 	if (n < INT_MIN || n > INT_MAX)
 		return (0);
-	return (1);
-}
-
-int is_stack_stored(t_stack *stack)
-{
-	while (stack->next != NULL)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
 	return (1);
 }

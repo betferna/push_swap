@@ -15,11 +15,12 @@ SRC_FILES = check_stack.c \
             ft_swap.c \
             parsing.c \
             push_swap_utils.c \
-            push_swap.c\
-			adaptive.c\
-			comp_disorder.c\
-			complex_sort.c\
-			simple_sort.c
+            push_swap.c \
+			adaptive.c \
+			complex_sort.c \
+			simple_sort.c \
+			bench.c \
+			misc.c
 
 
 

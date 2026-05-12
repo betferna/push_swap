@@ -12,36 +12,6 @@ void print_stack(t_stack *stack)
     printf("\n");
 }
 
-void free_stack(t_stack **stack)
-{
-	t_stack *temp;
- 
-	if (!stack || !*stack)
-		return ;
-	while (*stack)
-	{
-		temp = (*stack)->next;
-		free(*stack);
-		*stack = temp;
-	}
-}
-
-void free_temp(char **temp)
-{
-	int i;
-
-	if (!temp)
-		return ;
-	i = 0;
-	while (temp[i])
-	{
-		free(temp[i]);
-		i++;
-	}
-	free(temp);
-	temp = NULL;
-}
-
 t_stack	*ft_stack_new(int value)
 {
 	t_stack	*node;

@@ -24,30 +24,22 @@ void dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts, t_counter *count)
     if (opts->strategy == STRATEGY_SIMPLE)
     {
         simple_sort(a, b, count);
-        //ft_putstr_fd("sort strategy: simple sort\n", 1);//for testing, remove later
     }
     else if (opts->strategy == STRATEGY_MEDIUM)
     {
         // medium_sort(a, b, count);
-        //ft_putstr_fd("sort strategy: medium sort\n", 1);//for testing, remove later
     }
     else if (opts->strategy == STRATEGY_COMPLEX)
     {
         complex_sort(a, b, count);
-        //ft_putstr_fd("sort strategy: complex sort\n", 1);//for testing, remove later
     }
     else if (opts->strategy == STRATEGY_ADAPTIVE)
     {
         
         opts->strategy = adaptive_sort(a, b, count);
-        //t_putstr_fd("sort strategy: adaptive sort\n", 1);//for testing, remove later
-        // dispatch_strategy(a,b,opts,count);
     }
     else return;
 }
-
-// call in main: dispatch_strategy(&a, &b, strategy);
-// t_strategy s = STRATEGY_ADAPTIVE; only override it if a flag is detected
 
 t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count)
 {
@@ -70,46 +62,4 @@ t_strategy adaptive_sort(t_stack **a, t_stack **b, t_counter *count)
         return (STRATEGY_COMPLEX);
     }
 }
-
-char *chosen_strategy(t_strategy s)
-{
-    if (s == STRATEGY_SIMPLE)
-        return ("Simple");
-    if (s == STRATEGY_MEDIUM)
-        return ("Medium");
-    if (s == STRATEGY_COMPLEX)
-        return ("Complex");
-    else
-        return ("Adaptive");
-}
-
-char *complexity_strategy(t_strategy s)
-{
-    if (s == STRATEGY_SIMPLE)
-        return ("O(n2)");
-    if (s == STRATEGY_MEDIUM)
-        return ("O(n√n)");
-    if (s == STRATEGY_COMPLEX)
-        return ("O(n log n)");
-    else
-        return ("Adaptive");
-}
-
-void print_bench(t_opts *opts, t_counter *count, double disorder)
-{
-    if (!opts->bench)
-        return ;
-    ft_printf("[bench] disorder:  %.2f%%\n", disorder * 100);
-    ft_printf("[bench] strategy: %s\n", chosen_strategy(opts->strategy));
-    ft_printf("[bench] complexity: %s\n", complexity_strategy(opts->strategy));
-    ft_printf("[bench] total_ops: %d\n", count->total);
-    ft_printf("[bench] sa: %i  sb: %i  ss: %i  pa: %i  pb: %i\n",
-            count->sa, count->sb, count->ss, count->pa, count->pb);
-    ft_printf("[bench] ra: %i  rb: %i  rr: %i  rra: %i  rrb: %i  rrr: %i\n",
-            count->ra, count->rb, count->rr, count->rra, count->rrb, count->rrr);
-            // -> they all need to print to stderr instead of stdout? 
-            // Numbers are inccorect with running - could there be a bug in ft_printf?
-}
-
-
 
