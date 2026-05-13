@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:50:27 by marad             #+#    #+#             */
-/*   Updated: 2026/05/13 02:06:11 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/13 03:04:06 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int	p_flag(char *arg, t_opts *opts)
 		return (0);
 	if (ft_strncmp(arg, "--simple", 9) == 0)
 		opts->strategy = STRATEGY_SIMPLE;
-	else if (ft_strncmp(arg, "--medium", 8) == 0)
+	else if (ft_strncmp(arg, "--medium", 9) == 0)
 		opts->strategy = STRATEGY_MEDIUM;
-	else if (ft_strncmp(arg, "--complex", 9) == 0)
+	else if (ft_strncmp(arg, "--complex", 10) == 0)
 		opts->strategy = STRATEGY_COMPLEX;
-	else if (ft_strncmp(arg, "--adaptive", 10) == 0)
+	else if (ft_strncmp(arg, "--adaptive", 11) == 0)
 		opts->strategy = STRATEGY_ADAPTIVE;
-	else if (ft_strncmp(arg, "--bench", 7) == 0)
+	else if (ft_strncmp(arg, "--bench", 8) == 0)
 		opts->bench = 1;
 	else
 		return (0);

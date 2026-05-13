@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   simple_sort.c                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: marad <marad@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 12:18:26 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 12:20:20 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   simple_sort.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 12:18:26 by marad             #+#    #+#             */
+/*   Updated: 2026/05/13 03:13:57 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,51 @@ void	simple_sort(t_stack **a, t_stack **b, t_counter *count)
 		three_sort(a, count);
 	else if (size <= 5)
 		five_sort(a, b, count);
+	else 
+		sort_large(a, b, count);
+}
+
+void	sort_large(t_stack **a, t_stack **b, t_counter *count)
+{
+	while (ft_lstsize(*a) > 5)
+	{
+		min_top(a, count);
+		pb(a,b,count);
+	}
+	five_sort(a,b,count);
+	while (*b)
+		pa(a,b,count);
+	
+}
+
+void    min_top(t_stack **a, t_counter *count)
+{
+    t_stack *tmp;
+    int     min_val;
+    int     min_pos;
+    int     i;
+
+    tmp = *a;
+    min_val = tmp->value;
+    min_pos = 0;
+    i = 0;
+    while (tmp)
+    {
+        if (tmp->value < min_val)
+        {
+            min_val = tmp->value;
+            min_pos = i;
+        }
+        tmp = tmp->next;
+        i++;
+    }
+    int size = ft_lstsize(*a);
+    if (min_pos <= size / 2)
+        while (min_pos-- > 0)
+            ra(a, count);
+    else
+        while (size - min_pos++ > 0)
+            rra(a, count);
 }
 
 int	find_min(t_stack *stack)
