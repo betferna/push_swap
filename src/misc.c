@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   misc.c                                             :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: marad <marad@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 12:12:26 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 12:21:01 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   misc.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 12:12:26 by marad             #+#    #+#             */
+/*   Updated: 2026/05/13 02:34:51 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 double	comp_disorder(t_stack **stack)
 {
-	int		mistakes;
-	int		total_pairs;
+	long		mistakes;
+	long		total_pairs;
 	t_stack	*i;
 	t_stack	*j;
 
-	i = *stack;
 	mistakes = 0;
 	total_pairs = 0;
 	if (!stack || !*stack)
 		return (0.0);
+	i = *stack;
 	while (i != NULL)
 	{
 		j = i->next;
@@ -36,6 +36,8 @@ double	comp_disorder(t_stack **stack)
 		}
 		i = i->next;
 	}
+	if (total_pairs == 0)
+        return (0.0);
 	return ((double)mistakes / total_pairs);
 }
 

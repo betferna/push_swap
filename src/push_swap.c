@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   push_swap.c                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: marad <marad@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 12:15:38 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 12:18:07 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 12:15:38 by marad             #+#    #+#             */
+/*   Updated: 2026/05/13 02:39:04 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ int	main(int argc, char **argvs)
 	a = ft_parse(argc, argvs, a, &opts);
 	if (!a)
 		return (1);
-	disorder =  comp_disorder(&a);
-		// ft_printf("Disorder = %i %% \n", disorder);
+	disorder =  comp_disorder(&a) * 100;
+		ft_printf("Disorder = %i %% \n", (int)disorder);
 		dispatch_strategy(&a, &b, &opts, &count);
 //**** test ****/
 

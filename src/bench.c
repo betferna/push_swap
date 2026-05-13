@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   bench.c                                            :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: marad <marad@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 11:53:13 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 11:56:32 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   bench.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 11:53:13 by marad             #+#    #+#             */
+/*   Updated: 2026/05/13 02:32:42 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void	print_bench(t_opts *opts, t_counter *count, double disorder)
 {
 	if (!opts->bench)
 		return ;
-	ft_printf("[bench] disorder:  %.2f%%\n", disorder * 100);
+	int dis = (int)disorder;
+	ft_printf("[bench] disorder:  %i %%\n", dis);
 	ft_printf("[bench] strategy: %s\n", chosen_strategy(opts->strategy));
 	ft_printf("[bench] complexity: %s\n", complexity_strategy(opts->strategy));
 	ft_printf("[bench] total_ops: %d\n", count->total);
