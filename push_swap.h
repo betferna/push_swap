@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: marad <marad@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 11:11:47 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 13:04:03 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 11:11:47 by marad             #+#    #+#             */
+/*   Updated: 2026/05/13 02:03:12 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,12 @@ char			*chosen_strategy(t_strategy s);
 char			*complexity_strategy(t_strategy s);
 void			complex_helper(t_stack **a, t_stack **b,
 					t_counter *count, int n);
+void 			ft_index_stack(t_stack *a);
+void 			medium_sort(t_stack **a, t_stack **b, t_counter *count);
+void		 	pass_to_b(t_stack **a, t_stack **b, t_counter *count, int counter, int chunk);
+void 			order_list(t_stack **a, t_stack **b, t_counter *count);
+int 			ft_position(t_stack *stack, int index);
+
+
+
 #endif

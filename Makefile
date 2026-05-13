@@ -18,6 +18,7 @@ SRC_FILES = check_stack.c \
             push_swap.c \
 			adaptive.c \
 			complex_sort.c \
+			medium_sort.c \
 			simple_sort.c \
 			bench.c \
 			misc.c

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   adaptive.c                                         :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: marad <marad@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 11:50:27 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 11:52:59 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   adaptive.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 11:50:27 by marad             #+#    #+#             */
+/*   Updated: 2026/05/13 02:06:11 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ void	dispatch_strategy(t_stack **a, t_stack **b,
 	if (opts->strategy == STRATEGY_SIMPLE)
 		simple_sort(a, b, count);
 	else if (opts->strategy == STRATEGY_MEDIUM)
-	{
-		// medium_sort(a, b, count);
-	}
+		medium_sort(a, b, count);
 	else if (opts->strategy == STRATEGY_COMPLEX)
 		complex_sort(a, b, count);
 	else if (opts->strategy == STRATEGY_ADAPTIVE)
@@ -60,7 +58,7 @@ t_strategy	adaptive_sort(t_stack **a, t_stack **b, t_counter *count)
 	}
 	else if (disorder < 0.5)
 	{
-		// medium_sort(a, b, count);
+		medium_sort(a, b, count);
 		return (STRATEGY_MEDIUM);
 	}
 	else
