@@ -29,8 +29,9 @@ void medium_sort(t_stack **a, t_stack **b, t_counter *count)
 	int chunk;
 
 	counter = 0;
-	// if (!a || !*a)
-	// 	return ;
+	chunk = 0;
+	if (!a || !*a)
+		return ;
 	n = ft_lstsize(*a);
 	ft_index_stack(*a);
 	if (n <= 100)

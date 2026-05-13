@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 12:15:38 by marad             #+#    #+#             */
-/*   Updated: 2026/05/13 02:39:04 by user             ###   ########seoul.kr  */
+/*                                                        ::::::::            */
+/*   push_swap.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: user <user@student.42seoul.kr>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:15:38 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/13 13:58:02 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,22 @@ long long int	ft_atoil(const char *str)
 	return ((long long int)min * res);
 }
 
-int	ft_check_valid(int argc, char **argvs)
+int	ft_check_valid(int argc, char **argvs, t_opts *opts)
 {
 	int	i;
 	int	numbers_start;
 
-	i = 1;
-	while (i < argc && ft_isflag(argvs[i]))
-		i++;
+	i = 1+count_flags(argc, argvs, opts);
 	numbers_start = i;
-	while (i < argc)
+	while (i < argc - 1)
 	{
-		if (!is_numb_flag(argvs[i]))
+		if (!is_numb_flag(argvs[i], opts) || ((ft_atoil(argvs[i]) > INT_MAX) ||  (ft_atoil(argvs[i]) < INT_MIN)))
 		{
 			write(2, "Error\n", 6);
 			return (0);
 		}
+		if ((*argvs[i] == '-') && (ft_isdigit((int)*argvs[i + 1])) && *argvs[i + 1] != '\0')
+			i+=2;
 		i++;
 	}
 	if (!no_duplicate(argvs + numbers_start))
@@ -71,23 +71,38 @@ t_stack	*ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
 {
 	char	**temp;
 
-	if (argc == 2)
+	if (argc == 2+count_flags(argc,argvs,opts))
 	{
-		temp = ft_split(argvs[1], ' ');
+		temp = ft_split(argvs[1+count_flags(argc,argvs,opts)], ' ');
 	}
 	else
-		temp = argvs + 1;
+		temp = argvs + 1+count_flags(argc,argvs,opts);
 	a = init_stack(temp, opts);
 	if (!a)
 	{
-		if (argc == 2)
+		if (argc == 2+count_flags(argc,argvs,opts))
 			free_temp(temp);
 		write(2, "Error\n", 6);
 		return (NULL);
 	}
-	if (argc == 2)
+	if (argc == 2+count_flags(argc,argvs,opts))
 		free_temp(temp);
 	return (a);
+}
+
+int count_flags(int argc, char **argvs, t_opts *opts)
+{
+	int flags;
+	int i;
+
+	i = 1;
+	flags = 0;
+	while (i < argc - 1 && ft_isflag(argvs[i],opts))
+	{
+		i++;
+		flags++;
+	}
+	return (flags);
 }
 
 int	main(int argc, char **argvs)
@@ -111,14 +126,14 @@ int	main(int argc, char **argvs)
 	opts.bench = 0;
 	a = NULL;
 	b = NULL;
-	if (!ft_check_valid(argc, argvs))
+	if (!ft_check_valid(argc, argvs,&opts))
 		return (1);
 	a = ft_parse(argc, argvs, a, &opts);
 	if (!a)
 		return (1);
 	disorder =  comp_disorder(&a) * 100;
-		ft_printf("Disorder = %i %% \n", (int)disorder);
-		dispatch_strategy(&a, &b, &opts, &count);
+		// ft_printf("Disorder = %i %% \n", (int)disorder);
+	dispatch_strategy(&a, &b, &opts, &count);
 //**** test ****/
 
 		// printf("Disorder 2 = %f\n", check_disorder(&a));	

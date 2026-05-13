@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 11:11:47 by marad             #+#    #+#             */
-/*   Updated: 2026/05/13 03:12:38 by user             ###   ########seoul.kr  */
+/*                                                        ::::::::            */
+/*   push_swap.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: user <user@student.42seoul.kr>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 11:11:47 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/13 13:55:17 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,9 @@ void			rra(t_stack **a, t_counter *count);
 void			rrb(t_stack **b, t_counter *count);
 void			rrr(t_stack **a, t_stack **b, t_counter *count);
 void			ft_push(t_stack **dst, t_stack **src);
-int				is_numb_flag(char *str);
-int				ft_isflag(char *arg);
+int				is_numb_flag(char *str,t_opts *opts);
+int				ft_isflag(char *arg, t_opts *opts);
+int 			count_flags(int argc, char **argvs, t_opts *opts);
 int				no_duplicate(char **argvs);
 int				range_check(char **str);
 int				is_stack_stored(t_stack *stack);
