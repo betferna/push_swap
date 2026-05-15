@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:53:13 by marad             #+#    #+#             */
-/*   Updated: 2026/05/13 02:32:42 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/15 18:47:08 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ void	print_bench(t_opts *opts, t_counter *count, double disorder)
 	if (!opts->bench)
 		return ;
 	int dis = (int)disorder;
-	ft_printf("[bench] disorder:  %i %%\n", dis);
-	ft_printf("[bench] strategy: %s\n", chosen_strategy(opts->strategy));
-	ft_printf("[bench] complexity: %s\n", complexity_strategy(opts->strategy));
-	ft_printf("[bench] total_ops: %d\n", count->total);
-	ft_printf("[bench] sa: %i  sb: %i  ss: %i  pa: %i  pb: %i\n",
+	ft_printf_fd(2,"[bench] disorder:  %i %%\n", dis);
+	ft_printf_fd(2,"[bench] strategy: %s\n", chosen_strategy(opts->strategy));
+	ft_printf_fd(2,"[bench] complexity: %s\n", complexity_strategy(opts->strategy));
+	ft_printf_fd(2,"[bench] total_ops: %d\n", count->total);
+	ft_printf_fd(2,"[bench] sa: %i  sb: %i  ss: %i  pa: %i  pb: %i\n",
 		count->sa, count->sb, count->ss, count->pa, count->pb);
-	ft_printf("[bench] ra: %i  rb: %i  rr: %i  rra: %i  rrb: %i  rrr: %i\n",
+	ft_printf_fd(2,"[bench] ra: %i  rb: %i  rr: %i  rra: %i  rrb: %i  rrr: %i\n",
 		count->ra, count->rb, count->rr, count->rra, count->rrb, count->rrr);
 		// -> they all need to print to stderr instead of stdout? 
 		// Numbers are inccorect with running/could there be a bug in ft_printf?

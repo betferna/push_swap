@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 18:35:08 by betferna          #+#    #+#             */
-/*   Updated: 2026/05/09 12:16:40 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/15 18:50:54 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,11 @@ int	ft_print_int(int n);
 int	ft_print_x(unsigned int n);
 int	ft_print_upper_x(unsigned int n);
 int	ft_putbase_fd(unsigned long long nbr, char *base, int fd);
+int	ft_printf_fd(int fd, const char *format, ...);
+int	ft_print_fd_str(int fd, char *str);
+int	ft_print_fd_char(int fd, int c);
+int	ft_print_fd_int(int fd,int n);
+int	ft_print_fd_ptr(int fd, unsigned long long ptr);
+
 
 #endif

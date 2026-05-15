@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:15:38 by marad             #+#    #+#             */
-/*   Updated: 2026/05/15 18:02:53 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/15 18:23:13 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,6 @@ int	main(int argc, char **argvs)
 	t_opts		opts;
 	double		disorder;
 
-	// count = malloc(sizeof(t_counter));
-	// if (!count)
-	// 	return (1);
-	// opts = malloc(sizeof(t_opts));
-	// if (!opts)
-	// 	return (1);
 	if (argc <2)
 		return (0);
 	ft_memset(&count, 0, sizeof(t_counter));
@@ -132,51 +126,8 @@ int	main(int argc, char **argvs)
 	if (!a)
 		return (1);
 	disorder =  comp_disorder(&a) * 100;
-		// ft_printf("Disorder = %i %% \n", (int)disorder);
 	dispatch_strategy(&a, &b, &opts, &count);
-//**** test ****/
-
-		// printf("Disorder 2 = %f\n", check_disorder(&a));	
-		// sa(&a, count);
-		// print_stack(a);
-		// sb(&b, count);
-		// print_stack(b);
-		// ss(&a, &b, count);
-		// print_stack(a);
-		// print_stack(b);
-		// pa(&a,&b, count);
-		// print_stack(a);
-		// print_stack(b);
-		// pb(&a,&b, count);
-		// print_stack(a);
-		// print_stack(b);
-		// ra(&a, count);
-		// print_stack(a);
-		// print_stack(b);
-		// rb(&b, count);
-		// print_stack(a);
-		// print_stack(b);
-		// rr(&a,&b, count);
-		// print_stack(a);
-		// print_stack(b);
-		// rra(&a,count);
-		// print_stack(a);
-		// print_stack(b);
-		// rrb(&b, count);
-		// print_stack(a);
-		// print_stack(b);
-		// rrr(&a,&b, count);
-		// print_stack(a);
-		// print_stack(b);
-
-		// print_stack(a);
-		print_bench(&opts,&count,disorder);
-		// complex_sort(&a, &b, count);
-		// print_stack(a);
-		// simple_sort(&a,&b, count);
-		// print_stack(a);
-		// print_stack(b);
-
+	print_bench(&opts,&count,disorder);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

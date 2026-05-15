@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: user <user@student.42seoul.kr>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 11:11:47 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/13 13:55:17 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 11:11:47 by marad             #+#    #+#             */
+/*   Updated: 2026/05/15 18:54:00 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void			dispatch_strategy(t_stack **a, t_stack **b,
 void			ft_putstr_fd(char *s, int fd);
 t_strategy		adaptive_sort(t_stack **a, t_stack **b, t_counter *count);
 int				ft_printf(const char *format, ...);
+int				ft_printf_fd(int fd, const char *format, ...);
 void			print_bench(t_opts *opts, t_counter *count, double disorder);
 char			*chosen_strategy(t_strategy s);
 char			*complexity_strategy(t_strategy s);
