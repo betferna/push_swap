@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:11:47 by marad             #+#    #+#             */
-/*   Updated: 2026/05/15 18:54:00 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/15 19:41:58 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-// # include "libft/libft.h"
+#include <stdbool.h>
 
 typedef struct s_stack
 {
@@ -51,12 +51,14 @@ typedef struct s_counter
 	int	rrb;
 	int	rrr;
 	int	total;
+	bool COUNT_ONLY;
 }	t_counter;
 
 typedef struct s_opts
 {
 	t_strategy	strategy;
 	int			bench;
+	t_counter	count;
 }	t_opts;
 
 char			**ft_split(char const *s, char c);

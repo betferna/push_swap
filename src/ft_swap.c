@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_swap.c                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: marad <marad@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 12:09:48 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 12:10:50 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 12:09:48 by marad             #+#    #+#             */
+/*   Updated: 2026/05/15 19:51:28 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ void	sa(t_stack **a, t_counter *count)
 	if (!a || !*a)
 		return ;
 	ft_swap(a);
-	write (1, "sa\n", 3);
+	if (!count->COUNT_ONLY)
+		write (1, "sa\n", 3);
+	else 
+		write (2, "sa\n", 3);
 	count->sa += 1;
 	count->total += 1;
 }
@@ -38,7 +41,10 @@ void	sb(t_stack **b, t_counter *count)
 	if (!b)
 		return ;
 	ft_swap(b);
-	write (1, "sb\n", 3);
+	if (!count->COUNT_ONLY)
+		write (1, "sb\n", 3);
+	else 
+		write (2, "sb\n", 3);
 	count->sb += 1;
 	count->total += 1;
 }
@@ -49,7 +55,10 @@ void	ss(t_stack **a, t_stack **b, t_counter *count)
 		return ;
 	sa(a, count);
 	sb(b, count);
-	write (1, "ss\n", 3);
+	if (!count->COUNT_ONLY)
+		write (1, "ss\n", 3);
+	else 
+		write (2, "ss\n", 3);
 	count->ss += 1;
 	count->total += 1;
 }

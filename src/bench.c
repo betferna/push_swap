@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:53:13 by marad             #+#    #+#             */
-/*   Updated: 2026/05/15 19:15:41 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/15 19:35:51 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,4 @@ void	print_bench(t_opts *opts, t_counter *count, double disorder)
 		count->sa, count->sb, count->ss, count->pa, count->pb);
 	ft_printf_fd(2,"[bench] ra: %i  rb: %i  rr: %i  rra: %i  rrb: %i  rrr: %i\n",
 		count->ra, count->rb, count->rr, count->rra, count->rrb, count->rrr);
-		// -> they all need to print to stderr instead of stdout? 
-		// Numbers are inccorect with running/could there be a bug in ft_printf?
-		// no f type in ft_printf?
 }

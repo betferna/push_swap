@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   check_stack.c                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: marad <marad@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 11:56:54 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/13 14:04:05 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   check_stack.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 11:56:54 by marad             #+#    #+#             */
+/*   Updated: 2026/05/15 19:48:06 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	p_flag(char *arg, t_opts *opts)
 		opts->strategy = STRATEGY_ADAPTIVE;
 	else if (ft_strncmp(arg, "--bench", 8) == 0)
 		opts->bench = 1;
+	else if (ft_strncmp(arg, "--count_only", 13) == 0)
+		opts->count.COUNT_ONLY=true;
 	else
 		return (0);
 	return (1);
