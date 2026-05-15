@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 18:35:08 by betferna          #+#    #+#             */
-/*   Updated: 2026/05/15 18:50:54 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/15 19:13:43 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ int	ft_print_fd_str(int fd, char *str);
 int	ft_print_fd_char(int fd, int c);
 int	ft_print_fd_int(int fd,int n);
 int	ft_print_fd_ptr(int fd, unsigned long long ptr);
+int ft_print_fd_float(int fd, double n);
 
 
 #endif

@@ -28,6 +28,8 @@ static int	check_format_fd(int fd, char specifier, va_list args)
 		count += ft_print_fd_int(fd, va_arg(args, int));
 	else if (specifier == 'u')
 		count += ft_putbase_fd(va_arg(args, unsigned int), "0123456789", fd);
+	else if (specifier == 'f')
+		count += ft_print_fd_float(fd, va_arg(args, double));
 	else if (specifier == '%')
 		count += write(fd, "%", 1);
 	return (count);
