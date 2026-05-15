@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   push_swap.c                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: user <user@student.42seoul.kr>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 12:15:38 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/13 13:58:02 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 12:15:38 by marad             #+#    #+#             */
+/*   Updated: 2026/05/15 18:02:53 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ int	main(int argc, char **argvs)
 		// print_stack(a);
 		// print_stack(b);
 
-		print_stack(a);
+		// print_stack(a);
 		print_bench(&opts,&count,disorder);
 		// complex_sort(&a, &b, count);
 		// print_stack(a);
