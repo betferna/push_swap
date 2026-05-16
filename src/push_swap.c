@@ -109,13 +109,13 @@ int	main(int argc, char **argvs)
 {
 	t_stack		*a;
 	t_stack		*b;
-	t_counter	count;
+	//t_counter	count;
 	t_opts		opts;
 	double		disorder;
 
 	if (argc <2)
 		return (0);
-	ft_memset(&count, 0, sizeof(t_counter));
+	ft_memset(&opts, 0, sizeof(t_opts));
 	opts.strategy = STRATEGY_ADAPTIVE;
 	opts.bench = 0;
 	a = NULL;
@@ -126,8 +126,8 @@ int	main(int argc, char **argvs)
 	if (!a)
 		return (1);
 	disorder =  comp_disorder(&a) * 100;
-	dispatch_strategy(&a, &b, &opts, &count);
-	print_bench(&opts,&count,disorder);
+	dispatch_strategy(&a, &b, &opts, &opts.count);
+	print_bench(&opts,&opts.count,disorder);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

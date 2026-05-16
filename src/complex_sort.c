@@ -48,37 +48,6 @@ int	calc_max_bits(int n)
 	return (bit_position);
 }
 
-// void	complex_sort(t_stack **a, t_stack **b, t_counter *count)
-// {
-// 	int	n;
-// 	int	max_bits;
-// 	int	bit_position;
-// 	int	i;
-
-// 	n = ft_stacksize(*a);
-// 	if (n < 2)
-// 		return ;
-// 	assign_index(a);
-// 	max_bits = calc_max_bits(n);
-// 	bit_position = 0;
-// 	while (bit_position < max_bits)
-// 	{
-// 		i = 0;
-// 		while (i++ < n)
-// 		{
-// 			if ((((*a)->index >> bit_position) & 1) == 0)
-// 				pb(a, b, count);
-// 			else
-// 				ra(a, count);
-// 		}
-// 		while (*b)
-// 		{
-// 			pa(a, b, count);
-// 		}
-// 		bit_position++;
-// 	}
-// }
-
 void	complex_sort(t_stack **a, t_stack **b, t_counter *count)
 {
 	int	n;
