@@ -67,6 +67,13 @@ And display the benchmark information with:
 
 Compilation with flags : **-Wall -Wextra -Werror**
 
+**Sorting algorithms**
+- The simple algorithm is O(n2), contains a three sorst and five sort and a quick sort that check the min value and according to its position it decides if rotate or reverse rotate.
+
+- The medium algorithm is O(n√n), we indexed all the numers in to its actual position if ordered, and divided in chunks according to the total amount, if 100 integers 5 chunks of 20, if more 35. We create a window between an increasing counter + chunk and we give three conditions, if index < counter pb, rb, if between counter + chunk, pb, else ra, and continue until 'a' is empty, then we look for the biggest and pa, we rb or rrb until all integers passed sorted back to a.
+
+- The complex algorithm is O(n log n)
+
 
 
 <h3>Resources </h3>
