@@ -48,15 +48,15 @@ int	ft_check_valid(int argc, char **argvs, t_opts *opts)
 
 	i = 1+count_flags(argc, argvs, opts);
 	numbers_start = i;
-	while (i < argc - 1)
+	while (i < argc)
 	{
 		if (!is_numb_flag(argvs[i], opts) || ((ft_atoil(argvs[i]) > INT_MAX) ||  (ft_atoil(argvs[i]) < INT_MIN)))
 		{
 			write(2, "Error\n", 6);
 			return (0);
 		}
-		if ((*argvs[i] == '-') && (ft_isdigit((int)*argvs[i + 1])) && *argvs[i + 1] != '\0')
-			i+=2;
+		// if ((*argvs[i] == '-') && (ft_isdigit((int)*argvs[i + 1])) && *argvs[i + 1] != '\0')
+		// 	i+=2;
 		i++;
 	}
 	if (!no_duplicate(argvs + numbers_start))
@@ -85,7 +85,7 @@ t_stack	*ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
 		write(2, "Error\n", 6);
 		return (NULL);
 	}
-	if (argc == 2+count_flags(argc,argvs,opts))
+	if (argc == 2 + count_flags(argc,argvs,opts))
 		free_temp(temp);
 	return (a);
 }
