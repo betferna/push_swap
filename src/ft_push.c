@@ -65,6 +65,4 @@ void	pb(t_stack **a, t_stack **b, t_counter *count)
 		write (2, "pb\n", 3);
 	count->pb += 1;
 	count->total += 1;
-		printf("DEBUG pb: now total=%d pb=%d at addr %p\n",
-    	count->total, count->pb, (void*)count);
 }
