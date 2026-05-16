@@ -53,8 +53,8 @@ void	ss(t_stack **a, t_stack **b, t_counter *count)
 {
 	if (!a || !b)
 		return ;
-	sa(a, count);
-	sb(b, count);
+	ft_swap(a);
+	ft_swap(b);
 	if (!count->COUNT_ONLY)
 		write (1, "ss\n", 3);
 	else 

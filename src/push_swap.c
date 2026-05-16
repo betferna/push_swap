@@ -127,6 +127,9 @@ int	main(int argc, char **argvs)
 		return (1);
 	disorder =  comp_disorder(&a) * 100;
 	dispatch_strategy(&a, &b, &opts, &opts.count);
+		printf("DEBUG main: total=%d pb=%d pa=%d rb=%d rrb=%d at addr %p\n",
+    	opts.count.total, opts.count.pb, opts.count.pa,
+    	opts.count.rb, opts.count.rrb, (void*)&opts.count);
 	print_bench(&opts,&opts.count,disorder);
 	free_stack(&a);
 	free_stack(&b);
