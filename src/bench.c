@@ -40,12 +40,14 @@ void	print_bench(t_opts *opts, t_counter *count, double disorder)
 {
 	if (!opts->bench)
 		return ;
-	ft_printf_fd(2,"[bench] disorder:  %f %%\n", disorder);
-	ft_printf_fd(2,"[bench] strategy: %s\n", chosen_strategy(opts->strategy));
-	ft_printf_fd(2,"[bench] complexity: %s\n", complexity_strategy(opts->strategy));
-	ft_printf_fd(2,"[bench] total_ops: %d\n", count->total);
-	ft_printf_fd(2,"[bench] sa: %i  sb: %i  ss: %i  pa: %i  pb: %i\n",
+	ft_printf_fd(2, "[bench] disorder:  %f %%\n", disorder);
+	ft_printf_fd(2, "[bench] strategy: %s\n", chosen_strategy(opts->strategy));
+	ft_printf_fd(2, "[bench] complexity: %s\n",
+		complexity_strategy(opts->strategy));
+	ft_printf_fd(2, "[bench] total_ops: %d\n", count->total);
+	ft_printf_fd(2, "[bench] sa: %i  sb: %i  ss: %i  pa: %i  pb: %i\n",
 		count->sa, count->sb, count->ss, count->pa, count->pb);
-	ft_printf_fd(2,"[bench] ra: %i  rb: %i  rr: %i  rra: %i  rrb: %i  rrr: %i\n",
-		count->ra, count->rb, count->rr, count->rra, count->rrb, count->rrr);
+	ft_printf_fd(2, "[bench] ra: %i  rb: %i  rr: %i  rra: %i  rrb: %i  rrr:
+		%i\n", count->ra, count->rb, count->rr, count->rra, count->rrb,
+		count->rrr);
 }

@@ -29,9 +29,9 @@ void	sa(t_stack **a, t_counter *count)
 		return ;
 	ft_swap(a);
 	if (!count->COUNT_ONLY)
-		write (1, "sa\n", 3);
-	else 
-		write (2, "sa\n", 3);
+		write(1, "sa\n", 3);
+	else
+		write(2, "sa\n", 3);
 	count->sa += 1;
 	count->total += 1;
 }
@@ -42,9 +42,9 @@ void	sb(t_stack **b, t_counter *count)
 		return ;
 	ft_swap(b);
 	if (!count->COUNT_ONLY)
-		write (1, "sb\n", 3);
-	else 
-		write (2, "sb\n", 3);
+		write(1, "sb\n", 3);
+	else
+		write(2, "sb\n", 3);
 	count->sb += 1;
 	count->total += 1;
 }
@@ -56,9 +56,9 @@ void	ss(t_stack **a, t_stack **b, t_counter *count)
 	ft_swap(a);
 	ft_swap(b);
 	if (!count->COUNT_ONLY)
-		write (1, "ss\n", 3);
-	else 
-		write (2, "ss\n", 3);
+		write(1, "ss\n", 3);
+	else
+		write(2, "ss\n", 3);
 	count->ss += 1;
 	count->total += 1;
 }

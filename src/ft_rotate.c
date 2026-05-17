@@ -28,9 +28,9 @@ void	ra(t_stack **a, t_counter *count)
 {
 	rotate(a);
 	if (!count->COUNT_ONLY)
-		write (1, "ra\n", 3);
-	else 
-		write (2, "ra\n", 3);
+		write(1, "ra\n", 3);
+	else
+		write(2, "ra\n", 3);
 	count->ra += 1;
 	count->total += 1;
 }
@@ -39,9 +39,9 @@ void	rb(t_stack **b, t_counter *count)
 {
 	rotate(b);
 	if (!count->COUNT_ONLY)
-		write (1, "rb\n", 3);
-	else 
-		write (2, "rb\n", 3);
+		write(1, "rb\n", 3);
+	else
+		write(2, "rb\n", 3);
 	count->rb += 1;
 	count->total += 1;
 }
@@ -51,9 +51,9 @@ void	rr(t_stack **a, t_stack **b, t_counter *count)
 	rotate(a);
 	rotate(b);
 	if (!count->COUNT_ONLY)
-		write (1, "rr\n", 3);
-	else 
-		write (2, "rr\n", 3);
+		write(1, "rr\n", 3);
+	else
+		write(2, "rr\n", 3);
 	count->rr += 1;
 	count->total += 1;
 }

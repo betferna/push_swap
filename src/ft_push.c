@@ -49,20 +49,20 @@ void	pa(t_stack **a, t_stack **b, t_counter *count)
 {
 	ft_push(a, b);
 	if (!count->COUNT_ONLY)
-		write (1, "pa\n", 3);
-	else 
-		write (2, "pa\n", 3);
-	count-> pa += 1;
-	count-> total += 1;
+		write(1, "pa\n", 3);
+	else
+		write(2, "pa\n", 3);
+	count->pa += 1;
+	count->total += 1;
 }
 
 void	pb(t_stack **a, t_stack **b, t_counter *count)
 {
 	ft_push(b, a);
 	if (!count->COUNT_ONLY)
-		write (1, "pb\n", 3);
-	else 
-		write (2, "pb\n", 3);
+		write(1, "pb\n", 3);
+	else
+		write(2, "pb\n", 3);
 	count->pb += 1;
 	count->total += 1;
 }

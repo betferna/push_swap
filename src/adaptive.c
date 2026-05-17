@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   adaptive.c                                         :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: user <user@student.42seoul.kr>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/05/12 11:50:27 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/13 13:42:16 by marad         ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   adaptive.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 11:50:27 by marad             #+#    #+#             */
+/*   Updated: 2026/05/17 14:41:18 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int	p_flag(char *arg, t_opts *opts)
-// {
-// 	if (!arg || (arg[0] != '-' && arg[1] != '-'))
-// 		return (0);
-// 	if (ft_strncmp(arg, "--simple", 9) == 0)
-// 		opts->strategy = STRATEGY_SIMPLE;
-// 	else if (ft_strncmp(arg, "--medium", 9) == 0)
-// 		opts->strategy = STRATEGY_MEDIUM;
-// 	else if (ft_strncmp(arg, "--complex", 10) == 0)
-// 		opts->strategy = STRATEGY_COMPLEX;
-// 	else if (ft_strncmp(arg, "--adaptive", 11) == 0)
-// 		opts->strategy = STRATEGY_ADAPTIVE;
-// 	else if (ft_strncmp(arg, "--bench", 8) == 0)
-// 		opts->bench = 1;
-// 	else
-// 		return (0);
-// 	return (1);
-// }
+int	p_flag(char *arg, t_opts *opts)
+{
+	if (!arg || (arg[0] != '-' && arg[1] != '-'))
+		return (0);
+	if (ft_strncmp(arg, "--simple", 9) == 0)
+		opts->strategy = STRATEGY_SIMPLE;
+	else if (ft_strncmp(arg, "--medium", 9) == 0)
+		opts->strategy = STRATEGY_MEDIUM;
+	else if (ft_strncmp(arg, "--complex", 10) == 0)
+		opts->strategy = STRATEGY_COMPLEX;
+	else if (ft_strncmp(arg, "--adaptive", 11) == 0)
+		opts->strategy = STRATEGY_ADAPTIVE;
+	else if (ft_strncmp(arg, "--bench", 8) == 0)
+		opts->bench = 1;
+	else if (ft_strncmp(arg, "--count_only", 13) == 0)
+		opts->count.COUNT_ONLY = true;
+	else
+		return (0);
+	return (1);
+}
 
-void	dispatch_strategy(t_stack **a, t_stack **b,
-	t_opts *opts, t_counter *count)
+void	dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts,
+		t_counter *count)
 {
 	if (opts->strategy == STRATEGY_SIMPLE)
 		simple_sort(a, b, count);

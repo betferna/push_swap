@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:12:26 by marad             #+#    #+#             */
-/*   Updated: 2026/05/13 02:55:24 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 14:42:34 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 double	comp_disorder(t_stack **stack)
 {
-	long		mistakes;
-	long		total_pairs;
+	long	mistakes;
+	long	total_pairs;
 	t_stack	*i;
 	t_stack	*j;
 
@@ -37,20 +37,20 @@ double	comp_disorder(t_stack **stack)
 		i = i->next;
 	}
 	if (total_pairs == 0)
-        return (0.0);
+		return (0.0);
 	return ((double)mistakes / total_pairs);
 }
 
-int	is_stack_stored(t_stack *stack)
-{
-	while (stack->next != NULL)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
+// int	is_stack_stored(t_stack *stack)
+// {
+// 	while (stack->next != NULL)
+// 	{
+// 		if (stack->value > stack->next->value)
+// 			return (0);
+// 		stack = stack->next;
+// 	}
+// 	return (1);
+// }
 
 void	free_stack(t_stack **stack)
 {

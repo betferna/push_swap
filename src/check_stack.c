@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:56:54 by marad             #+#    #+#             */
-/*   Updated: 2026/05/15 19:48:06 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 14:41:05 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,6 @@ int	ft_isflag(char *arg, t_opts *opts)
 	else if (p_flag(arg,opts))
 		return (1);
 	return (0);
-}
-int	p_flag(char *arg, t_opts *opts)
-{
-	if (!arg || (arg[0] != '-' && arg[1] != '-'))
-		return (0);
-	if (ft_strncmp(arg, "--simple", 9) == 0)
-		opts->strategy = STRATEGY_SIMPLE;
-	else if (ft_strncmp(arg, "--medium", 9) == 0)
-		opts->strategy = STRATEGY_MEDIUM;
-	else if (ft_strncmp(arg, "--complex", 10) == 0)
-		opts->strategy = STRATEGY_COMPLEX;
-	else if (ft_strncmp(arg, "--adaptive", 11) == 0)
-		opts->strategy = STRATEGY_ADAPTIVE;
-	else if (ft_strncmp(arg, "--bench", 8) == 0)
-		opts->bench = 1;
-	else if (ft_strncmp(arg, "--count_only", 13) == 0)
-		opts->count.COUNT_ONLY=true;
-	else
-		return (0);
-	return (1);
 }
 
 int	is_numb_flag(char *str, t_opts *opts)

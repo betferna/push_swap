@@ -46,16 +46,18 @@ int	ft_check_valid(int argc, char **argvs, t_opts *opts)
 	int	i;
 	int	numbers_start;
 
-	i = 1+count_flags(argc, argvs, opts);
+	i = 1 + count_flags(argc, argvs, opts);
 	numbers_start = i;
 	while (i < argc)
 	{
-		if (!is_numb_flag(argvs[i], opts) || ((ft_atoil(argvs[i]) > INT_MAX) ||  (ft_atoil(argvs[i]) < INT_MIN)))
+		if (!is_numb_flag(argvs[i], opts) || ((ft_atoil(argvs[i]) > INT_MAX)
+				|| (ft_atoil(argvs[i]) < INT_MIN)))
 		{
 			write(2, "Error\n", 6);
 			return (0);
 		}
-		// if ((*argvs[i] == '-') && (ft_isdigit((int)*argvs[i + 1])) && *argvs[i + 1] != '\0')
+		// if ((*argvs[i] == '-') && (ft_isdigit((int)*argvs[i + 1]))
+			&& *argvs[i + 1] != '\0')
 		// 	i+=2;
 		i++;
 	}
@@ -71,33 +73,33 @@ t_stack	*ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
 {
 	char	**temp;
 
-	if (argc == 2+count_flags(argc,argvs,opts))
+	if (argc == 2 + count_flags(argc, argvs, opts))
 	{
-		temp = ft_split(argvs[1+count_flags(argc,argvs,opts)], ' ');
+		temp = ft_split(argvs[1 + count_flags(argc, argvs, opts)], ' ');
 	}
 	else
-		temp = argvs + 1+count_flags(argc,argvs,opts);
+		temp = argvs + 1 + count_flags(argc, argvs, opts);
 	a = init_stack(temp, opts);
 	if (!a)
 	{
-		if (argc == 2+count_flags(argc,argvs,opts))
+		if (argc == 2 + count_flags(argc, argvs, opts))
 			free_temp(temp);
 		write(2, "Error\n", 6);
 		return (NULL);
 	}
-	if (argc == 2 + count_flags(argc,argvs,opts))
+	if (argc == 2 + count_flags(argc, argvs, opts))
 		free_temp(temp);
 	return (a);
 }
 
-int count_flags(int argc, char **argvs, t_opts *opts)
+int	count_flags(int argc, char **argvs, t_opts *opts)
 {
-	int flags;
-	int i;
+	int	flags;
+	int	i;
 
 	i = 1;
 	flags = 0;
-	while (i < argc - 1 && ft_isflag(argvs[i],opts))
+	while (i < argc - 1 && ft_isflag(argvs[i], opts))
 	{
 		i++;
 		flags++;
@@ -107,27 +109,27 @@ int count_flags(int argc, char **argvs, t_opts *opts)
 
 int	main(int argc, char **argvs)
 {
-	t_stack		*a;
-	t_stack		*b;
-	//t_counter	count;
-	t_opts		opts;
-	double		disorder;
+	t_stack	*a;
+	t_stack	*b;
+	t_opts	opts;
+	double	disorder;
 
-	if (argc <2)
+	// t_counter	count;
+	if (argc < 2)
 		return (0);
 	ft_memset(&opts, 0, sizeof(t_opts));
 	opts.strategy = STRATEGY_ADAPTIVE;
 	opts.bench = 0;
 	a = NULL;
 	b = NULL;
-	if (!ft_check_valid(argc, argvs,&opts))
+	if (!ft_check_valid(argc, argvs, &opts))
 		return (1);
 	a = ft_parse(argc, argvs, a, &opts);
 	if (!a)
 		return (1);
-	disorder =  comp_disorder(&a) * 100;
+	disorder = comp_disorder(&a) * 100;
 	dispatch_strategy(&a, &b, &opts, &opts.count);
-	print_bench(&opts,&opts.count,disorder);
+	print_bench(&opts, &opts.count, disorder);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
