@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:15:38 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 15:25:30 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 16:02:49 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@ int	main(int argc, char **argvs)
 	if (!a)
 		return (1);
 	disorder = comp_disorder(&a) * 100;
+	if (disorder == 0.0)
+		return (0);
 	dispatch_strategy(&a, &b, &opts, &opts.count);
 	print_bench(&opts, &opts.count, disorder);
 	free_stack(&a);
