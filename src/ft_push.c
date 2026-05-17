@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:04:11 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 15:47:31 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:55:16 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ void	ft_lstdellast(t_stack **lst)
 
 void	pa(t_stack **a, t_stack **b, t_counter *count)
 {
-	int	fd = 1;
+	int	fd;
 
+	fd = 1;
 	ft_push(a, b);
 	if (count->count_only)
 		fd = 2;
