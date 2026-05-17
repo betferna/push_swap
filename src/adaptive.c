@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:50:27 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 14:41:18 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:38:50 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	p_flag(char *arg, t_opts *opts)
 	else if (ft_strncmp(arg, "--bench", 8) == 0)
 		opts->bench = 1;
 	else if (ft_strncmp(arg, "--count_only", 13) == 0)
-		opts->count.COUNT_ONLY = true;
+		opts->count.count_only = true;
 	else
 		return (0);
 	return (1);

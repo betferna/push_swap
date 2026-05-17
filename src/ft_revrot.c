@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:07:15 by marad             #+#    #+#             */
-/*   Updated: 2026/05/15 19:52:26 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:39:10 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_revrot(t_stack **stack)
 void	rra(t_stack **a, t_counter *count)
 {
 	ft_revrot(a);
-	if (!count->COUNT_ONLY)
+	if (!count->count_only)
 		write(1, "rra\n", 4);
 	else
 		write(2, "rra\n", 4);
@@ -44,7 +44,7 @@ void	rra(t_stack **a, t_counter *count)
 void	rrb(t_stack **b, t_counter *count)
 {
 	ft_revrot(b);
-	if (!count->COUNT_ONLY)
+	if (!count->count_only)
 		write(1, "rrb\n", 4);
 	else
 		write(2, "rrb\n", 4);
@@ -56,7 +56,7 @@ void	rrr(t_stack **a, t_stack **b, t_counter *count)
 {
 	ft_revrot(a);
 	ft_revrot(b);
-	if (!count->COUNT_ONLY)
+	if (!count->count_only)
 		write(1, "rrr\n", 4);
 	else
 		write(2, "rrr\n", 4);
