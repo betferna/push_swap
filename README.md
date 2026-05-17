@@ -72,15 +72,22 @@ Compilation with flags : **-Wall -Wextra -Werror**
 
 - The medium algorithm is O(n√n), we indexed all the numers in to its actual position if ordered, and divided in chunks according to the total amount, if 100 integers 5 chunks of 20, if more 35. We create a window between an increasing counter + chunk and we give three conditions, if index < counter pb, rb, if between counter + chunk, pb, else ra, and continue until 'a' is empty, then we look for the biggest and pa, we rb or rrb until all integers passed sorted back to a.
 
-- The complex algorithm is O(n log n), implemented as a radix sort on the index of each number. We first iterate through the stack and add each element an index value. The smallest number becomes 0, the next becomes 1, and so on up to n-1. We then do one pass for each bit, starting from the least significant. For every element currently on top of stack a, we look at the bit. If the bit is 0 we pb (pussh to b) it, if the bit is 1 we ra (rotate it to the back of stack a). After one full pass, b contains every element with a bit that was 0 and a contains every element wwith the bit was 1. We then pa everything from b (push back to a), where all the bit-0 elements are stacked on top of the bit-1 elements. We repeat this cycle until we have processed every bit. Because the smallest value has index 0 (all bits 0) and the largest has index equal to n-1, the entire stack is sorted after the last pass.
+- The complex algorithm is O(n log n), implemented as a radix sort on the index of each number. We first iterate through the stack and add each element an index value. The smallest number becomes 0, the next becomes 1, and so on up to n-1. We then do one pass for each bit, starting from the least significant. For every element currently on top of stack a, we look at the bit. If the bit is 0 we pb (pussh to b) it, if the bit is 1 we ra (rotate it to the back of stack a). After one full pass, b contains every element with a bit that was 0 and a contains every element with the bit was 1. We then pa everything from b (push back to a), where all the bit-0 elements are stacked on top of the bit-1 elements. We repeat this cycle until we have processed every bit. Because the smallest value has index 0 (all bits 0) and the largest has index equal to n-1, the entire stack is sorted after the last pass.
 
 **Adaptive algorithm**
 Before sorting we calculate the disorder of the input, a number between 0 and 1 that counts how many pairs of elements are in the wrong order divided by the total number of pairs. Then we pick a strategy based on that value:
 
-- If disorder is low (smaller than 0.2), we use the simple algorithm above. The input is nearly sorted, so a single corrective pass handles it in O(n) operations.
+- If disorder is low (smaller than 0.2), we use the simple algorithm above wich gives O(n^2) operations.
 - If disover is medium (with value betwwen 0.2 and 0.5), we use the medium algorithm. Chunk-based partitioning gives O(n√n) operations.
 - If disorder is high (higher than 0.5), we use the complex algorithm. Radix sort gives O(n log n) operations. 
 
+**Team contibution**
+- The project was made with a very dinamic workflow, while both intervine in each others code, we could remark more of each other contribution in the following aspects:
+- Parsing: 'check_valid': wich validates inputs to be integer, duplicates, return errors, made by 'marad', 'init_stack' made by 'betferna' and detect flags by both.
+- Operations: 'swap' and 'push' made by 'betferna' and 'rotate' and 'reverse rotate' made by 'marad'.
+- Strategies: 'simple' and 'medium' made by betferna, 'complex' and 'adaptive' made by 'marad'.
+- Compute disorder: was made by both, the dispatch strategy by 'marad' and the 'print_bench' by 'betferna'.
+- Printf_fd: made by 'betferna' is a modified version of the previous 42 school project with an added parameter of the file descriptor for 'stderr' and with the '%f' flag to be able to print double. 
 
 <h3>Resources </h3>
 
