@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/21 18:41:12 by betferna          #+#    #+#             */
+/*   Updated: 2026/05/17 14:27:45 by user             ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_print_fd_char(int fd, int n)
@@ -50,7 +62,7 @@ int	ft_printf_fd(int fd, const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-			total_len += check_format_fd(fd,format[i + 1], args);
+			total_len += check_format_fd(fd, format[i + 1], args);
 			i++;
 		}
 		else
