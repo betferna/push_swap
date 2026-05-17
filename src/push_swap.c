@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:15:38 by marad             #+#    #+#             */
-/*   Updated: 2026/05/15 18:23:13 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:25:30 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ int	ft_check_valid(int argc, char **argvs, t_opts *opts)
 			write(2, "Error\n", 6);
 			return (0);
 		}
-		// if ((*argvs[i] == '-') && (ft_isdigit((int)*argvs[i + 1]))
-			&& *argvs[i + 1] != '\0')
-		// 	i+=2;
 		i++;
 	}
 	if (!no_duplicate(argvs + numbers_start))
@@ -69,6 +66,9 @@ int	ft_check_valid(int argc, char **argvs, t_opts *opts)
 	return (1);
 }
 
+// if ((*argvs[i] == '-') && (ft_isdigit((int)*argvs[i + 1]))
+//	&& *argvs[i + 1] != '\0')
+// 	i+=2;
 t_stack	*ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
 {
 	char	**temp;
@@ -114,7 +114,6 @@ int	main(int argc, char **argvs)
 	t_opts	opts;
 	double	disorder;
 
-	// t_counter	count;
 	if (argc < 2)
 		return (0);
 	ft_memset(&opts, 0, sizeof(t_opts));

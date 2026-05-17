@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:09:48 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 14:42:08 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:06:10 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,9 @@ void	ft_index_stack(t_stack *a)
 
 void	medium_sort(t_stack **a, t_stack **b, t_counter *count)
 {
-	int	counter;
 	int	n;
 	int	chunk;
 
-	counter = 0;
 	chunk = 0;
 	if (!a || !*a)
 		return ;
@@ -50,13 +48,15 @@ void	medium_sort(t_stack **a, t_stack **b, t_counter *count)
 		chunk = 20;
 	else if (n <= 500)
 		chunk = 35;
-	pass_to_b(a, b, count, counter, chunk);
+	pass_to_b(a, b, count, chunk);
 	order_list(a, b, count);
 }
 
-void	pass_to_b(t_stack **a, t_stack **b, t_counter *count, int counter,
-		int chunk)
+void	pass_to_b(t_stack **a, t_stack **b, t_counter *count, int chunk)
 {
+	int	counter;
+
+	counter = 0;
 	while (*a)
 	{
 		if ((*a)->index <= counter)
@@ -104,7 +104,7 @@ void	order_list(t_stack **a, t_stack **b, t_counter *count)
 
 int	ft_position(t_stack *stack, int index)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	if (!stack)

@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:53:13 by marad             #+#    #+#             */
-/*   Updated: 2026/05/15 19:35:51 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:27:21 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	print_bench(t_opts *opts, t_counter *count, double disorder)
 	ft_printf_fd(2, "[bench] total_ops: %d\n", count->total);
 	ft_printf_fd(2, "[bench] sa: %i  sb: %i  ss: %i  pa: %i  pb: %i\n",
 		count->sa, count->sb, count->ss, count->pa, count->pb);
-	ft_printf_fd(2, "[bench] ra: %i  rb: %i  rr: %i  rra: %i  rrb: %i  rrr:
-		%i\n", count->ra, count->rb, count->rr, count->rra, count->rrb,
-		count->rrr);
+	ft_printf_fd(2, "[bench] ra: %i  rb: %i", count->ra, count->rb);
+	ft_printf_fd(2, "rr: %i  rra: %i", count->rr, count->rra);
+	ft_printf_fd(2, "rrb: %i  rrr: %i\n", count->rrb, count->rrr);
 }

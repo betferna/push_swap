@@ -20,6 +20,7 @@ SRC_FILES = check_stack.c \
 			complex_sort.c \
 			medium_sort.c \
 			simple_sort.c \
+			simple_sort_utils.c \
 			bench.c \
 			misc.c
 

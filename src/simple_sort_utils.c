@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:18:26 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 14:45:30 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:17:41 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,28 @@ void	three_sort(t_stack **stack, t_counter *count)
 
 void	min_top(t_stack **a, t_counter *count)
 {
-	t_stack *tmp;
-	int min_val;
-	int min_pos;
-	int i;
+	t_stack		*tmp;
+	int			min_val;
+	int			min_pos;
+	int			size;
 
 	tmp = *a;
 	min_val = tmp->value;
 	min_pos = 0;
+	min_pos = ft_min_pos(min_pos, min_val, tmp);
+	size = ft_lstsize(*a);
+	if (min_pos <= size / 2)
+		while (min_pos-- > 0)
+			ra(a, count);
+	else
+		while (size - min_pos++ > 0)
+			rra(a, count);
+}
+
+int	ft_min_pos(int min_pos, int min_val, t_stack *tmp)
+{
+	int	i;
+
 	i = 0;
 	while (tmp)
 	{
@@ -74,11 +88,5 @@ void	min_top(t_stack **a, t_counter *count)
 		tmp = tmp->next;
 		i++;
 	}
-	int size = ft_lstsize(*a);
-	if (min_pos <= size / 2)
-		while (min_pos-- > 0)
-			ra(a, count);
-	else
-		while (size - min_pos++ > 0)
-			rra(a, count);
+	return (min_pos);
 }

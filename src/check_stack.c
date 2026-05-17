@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:56:54 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 14:41:05 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:02:50 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	ft_isdigit(int c)
 {
 	if (!c)
 		return (0);
-	// if (c == '-')
-		
 	if (!((c >= '0' && c <= '9')))
 		return (0);
 	return (1);
@@ -32,7 +30,7 @@ int	ft_isflag(char *arg, t_opts *opts)
 		opts->bench = 1;
 		return (1);
 	}
-	else if (p_flag(arg,opts))
+	else if (p_flag(arg, opts))
 		return (1);
 	return (0);
 }

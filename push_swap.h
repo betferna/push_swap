@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:11:47 by marad             #+#    #+#             */
-/*   Updated: 2026/05/15 19:41:58 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:17:22 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,11 @@ void			complex_helper(t_stack **a, t_stack **b,
 					t_counter *count, int n);
 void 			ft_index_stack(t_stack *a);
 void 			medium_sort(t_stack **a, t_stack **b, t_counter *count);
-void		 	pass_to_b(t_stack **a, t_stack **b, t_counter *count, int counter, int chunk);
+void		 	pass_to_b(t_stack **a, t_stack **b, t_counter *count, int chunk);
 void 			order_list(t_stack **a, t_stack **b, t_counter *count);
 int 			ft_position(t_stack *stack, int index);
-
-
+int				is_higher(t_stack *comp, t_stack *head);
+int				find_min(t_stack *stack);
+int				ft_min_pos(int min_pos, int min_val, t_stack *tmp);
 
 #endif
