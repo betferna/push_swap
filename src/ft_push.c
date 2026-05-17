@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:04:11 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 15:38:59 by user             ###   ########seoul.kr  */
+/*   Updated: 2026/05/17 15:47:31 by user             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,24 @@ void	ft_lstdellast(t_stack **lst)
 
 void	pa(t_stack **a, t_stack **b, t_counter *count)
 {
+	int	fd = 1;
+
 	ft_push(a, b);
-	if (!count->count_only)
-		write(1, "pa\n", 3);
-	else
-		write(2, "pa\n", 3);
+	if (count->count_only)
+		fd = 2;
+	write(fd, "pa\n", 3);
 	count->pa += 1;
 	count->total += 1;
 }
 
 void	pb(t_stack **a, t_stack **b, t_counter *count)
 {
+	int	fd;
+
 	ft_push(b, a);
-	if (!count->count_only)
-		write(1, "pb\n", 3);
-	else
-		write(2, "pb\n", 3);
+	if (count->count_only)
+		fd = 2;
+	write(fd, "pb\n", 3);
 	count->pb += 1;
 	count->total += 1;
 }
