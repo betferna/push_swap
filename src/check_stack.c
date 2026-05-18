@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 11:56:54 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/18 13:31:01 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/18 14:59:43 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ int	is_numb_flag(char *str, t_opts *opts)
 	if (!str || !str[0])
 		return (0);
 	i = 1;
-	if (str[0] == '-' && str[1] && (ft_isdigit(str[1])))
+	if ((ft_isdigit(str[0])) || (ft_isflag(str, opts)))
+		return (1);
+	else if (str[0] == '-' && str[1] && (ft_isdigit(str[1])))
 	{
 		while (str[i])
 		{
@@ -52,8 +54,6 @@ int	is_numb_flag(char *str, t_opts *opts)
 		}
 		return (1);
 	}
-	if ((ft_isdigit(str[0])) || (ft_isflag(str, opts)))
-		return (1);
 	return (0);
 }
 

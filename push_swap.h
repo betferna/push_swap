@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 11:11:47 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 15:35:20 by user             ###   ########seoul.kr  */
+/*                                                        ::::::::            */
+/*   push_swap.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: user <user@student.42seoul.kr>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 11:11:47 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/18 14:15:30 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_counter
 	int				rrb;
 	int				rrr;
 	int				total;
-	bool			count_only;
+	int				count_only;
 }					t_counter;
 
 typedef struct s_opts
