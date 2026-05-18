@@ -18,7 +18,7 @@ void	print_stack(t_stack *stack)
 		return ;
 	while (stack)
 	{
-		printf("%d\n", stack->value);
+		fd_printf("%d\n", stack->value);//changed to fd_printf
 		stack = stack->next;
 	}
 	printf("\n");

@@ -99,7 +99,7 @@ int	count_flags(int argc, char **argvs, t_opts *opts)
 
 	i = 1;
 	flags = 0;
-	while (i < argc - 1 && ft_isflag(argvs[i], opts))
+	while (i < argc - 1 && ft_isflag(argvs[i], opts))// Not sure we need the -1 so we always check the last arg? 
 	{
 		i++;
 		flags++;

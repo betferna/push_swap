@@ -77,12 +77,12 @@ int	no_duplicate(char **argvs)
 	return (1);
 }
 
-int	range_check(char **str)
-{
-	long long	n;
+// int	range_check(char **str)
+// {
+// 	long long	n;
 
-	n = ft_atoil((const char *)*str);
-	if (n < INT_MIN || n > INT_MAX)
-		return (0);
-	return (1);
-}
+// 	n = ft_atoil((const char *)*str);
+// 	if (n < INT_MIN || n > INT_MAX)
+// 		return (0);
+// 	return (1);
+// }

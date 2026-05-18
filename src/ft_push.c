@@ -62,6 +62,7 @@ void	pb(t_stack **a, t_stack **b, t_counter *count)
 {
 	int	fd;
 
+	fd = 1;
 	ft_push(b, a);
 	if (count->count_only)
 		fd = 2;

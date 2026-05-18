@@ -81,7 +81,6 @@ void				rotate(t_stack **stack);
 void				ra(t_stack **a, t_counter *count);
 void				rb(t_stack **a, t_counter *count);
 void				rr(t_stack **a, t_stack **b, t_counter *count);
-void				revrot(t_stack **stack);
 void				rra(t_stack **a, t_counter *count);
 void				rrb(t_stack **b, t_counter *count);
 void				rrr(t_stack **a, t_stack **b, t_counter *count);
@@ -90,7 +89,7 @@ int					is_numb_flag(char *str, t_opts *opts);
 int					ft_isflag(char *arg, t_opts *opts);
 int					count_flags(int argc, char **argvs, t_opts *opts);
 int					no_duplicate(char **argvs);
-int					range_check(char **str);
+// int					range_check(char **str);//unsed function- can delete
 int					is_stack_stored(t_stack *stack);
 int					ft_isdigit(int c);
 void				ft_push(t_stack **dst, t_stack **src);
