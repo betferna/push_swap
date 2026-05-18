@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 11:11:47 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/18 14:15:30 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/18 15:29:22 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ int					is_numb_flag(char *str, t_opts *opts);
 int					ft_isflag(char *arg, t_opts *opts);
 int					count_flags(int argc, char **argvs, t_opts *opts);
 int					no_duplicate(char **argvs);
-// int					range_check(char **str);//unsed function- can delete
 int					is_stack_stored(t_stack *stack);
 int					ft_isdigit(int c);
 void				ft_push(t_stack **dst, t_stack **src);

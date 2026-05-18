@@ -5,7 +5,7 @@ push_swap as part of the 42 curriculum is ment to sort a given amount of numbers
 
 We count with two stacks, a and b.
 We use the following operations:
-|Code | Ation|
+|Code | Action|
 |-----|------|
 |pa | Moves element from stack a to b
 |pb| Moves element of stack b to a
@@ -70,7 +70,7 @@ Compilation with flags : **-Wall -Wextra -Werror**
 **Sorting algorithms**
 - The simple algorithm is O(n2), contains a three sorst and five sort and a quick sort that check the min value and according to its position it decides if rotate or reverse rotate.
 
-- The medium algorithm is O(n√n), we indexed all the numers in to its actual position if ordered, and divided in chunks according to the total amount, if 100 integers 5 chunks of 20, if more 35. We create a window between an increasing counter + chunk and we give three conditions, if index < counter pb, rb, if between counter + chunk, pb, else ra, and continue until 'a' is empty, then we look for the biggest and pa, we rb or rrb until all integers passed sorted back to a.
+- The medium algorithm is O(n√n), we indexed all the numbers in to its actual position if ordered and creates a window between counter and chunk, if less than 100 integers the chunk would be 20, if more 35. We create a window between an increasing counter + chunk and we give three conditions, if index < counter pb, rb, if between counter + chunk, pb, else ra, and continue until 'a' is empty, then we look for the biggest and pa, we rb or rrb until all integers passed sorted back to a.
 
 - The complex algorithm is O(n log n), implemented as a radix sort on the index of each number. We first iterate through the stack and add each element an index value. The smallest number becomes 0, the next becomes 1, and so on up to n-1. We then do one pass for each bit, starting from the least significant. For every element currently on top of stack a, we look at the bit. If the bit is 0 we pb (pussh to b) it, if the bit is 1 we ra (rotate it to the back of stack a). After one full pass, b contains every element with a bit that was 0 and a contains every element with the bit was 1. We then pa everything from b (push back to a), where all the bit-0 elements are stacked on top of the bit-1 elements. We repeat this cycle until we have processed every bit. Because the smallest value has index 0 (all bits 0) and the largest has index equal to n-1, the entire stack is sorted after the last pass.
 
