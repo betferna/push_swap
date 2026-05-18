@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 12:15:38 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 16:02:49 by user             ###   ########seoul.kr  */
+/*                                                        ::::::::            */
+/*   push_swap.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: user <user@student.42seoul.kr>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 12:15:38 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/18 13:14:20 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,6 @@ int	ft_check_valid(int argc, char **argvs, t_opts *opts)
 	return (1);
 }
 
-// if ((*argvs[i] == '-') && (ft_isdigit((int)*argvs[i + 1]))
-//	&& *argvs[i + 1] != '\0')
-// 	i+=2;
 t_stack	*ft_parse(int argc, char **argvs, t_stack *a, t_opts *opts)
 {
 	char	**temp;
@@ -99,7 +96,7 @@ int	count_flags(int argc, char **argvs, t_opts *opts)
 
 	i = 1;
 	flags = 0;
-	while (i < argc - 1 && ft_isflag(argvs[i], opts))// Not sure we need the -1 so we always check the last arg? 
+	while (i < argc && ft_isflag(argvs[i], opts))// Not sure we need the -1 so we always check the last arg? 
 	{
 		i++;
 		flags++;

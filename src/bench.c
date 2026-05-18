@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   bench.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 11:53:13 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 15:41:06 by user             ###   ########seoul.kr  */
+/*                                                        ::::::::            */
+/*   bench.c                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: user <user@student.42seoul.kr>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 11:53:13 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/18 13:17:09 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,6 @@ void	print_bench(t_opts *opts, t_counter *count, double disorder)
 	ft_printf_fd(2, "[bench] ra: %i  rb: %i", count->ra, count->rb);
 	ft_printf_fd(2, " rr: %i  rra: %i", count->rr, count->rra);
 	ft_printf_fd(2, " rrb: %i  rrr: %i\n", count->rrb, count->rrr);
+	if (count->count_only == true)
+		printf("%i\n\n", count->total);
 }

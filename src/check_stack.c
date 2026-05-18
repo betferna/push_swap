@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   check_stack.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 11:56:54 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 15:33:52 by user             ###   ########seoul.kr  */
+/*                                                        ::::::::            */
+/*   check_stack.c                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: user <user@student.42seoul.kr>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 11:56:54 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/18 13:31:01 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,21 @@ int	is_numb_flag(char *str, t_opts *opts)
 {
 	int	i;
 
-	i = 0;
 	if (!str || !str[0])
 		return (0);
-	if (str[i])
+	i = 1;
+	if (str[0] == '-' && str[1] && (ft_isdigit(str[1])))
 	{
-		if (str[0] == '-' && str[1] && (ft_isdigit(str[1])))
-			return (1);
-		if ((ft_isdigit(str[0])) || (ft_isflag(str, opts)))
-			return (1);
-		i++;
+		while (str[i])
+		{
+			if (!ft_isdigit(str[i]))
+				return (0);
+			i++;
+		}
+		return (1);
 	}
+	if ((ft_isdigit(str[0])) || (ft_isflag(str, opts)))
+		return (1);
 	return (0);
 }
 

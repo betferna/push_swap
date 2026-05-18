@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   adaptive.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42seoul.kr>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 11:50:27 by marad             #+#    #+#             */
-/*   Updated: 2026/05/17 15:38:50 by user             ###   ########seoul.kr  */
+/*                                                        ::::::::            */
+/*   adaptive.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: user <user@student.42seoul.kr>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/05/12 11:50:27 by marad         #+#    #+#                 */
+/*   Updated: 2026/05/18 13:19:20 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	p_flag(char *arg, t_opts *opts)
 		opts->strategy = STRATEGY_COMPLEX;
 	else if (ft_strncmp(arg, "--adaptive", 11) == 0)
 		opts->strategy = STRATEGY_ADAPTIVE;
-	else if (ft_strncmp(arg, "--bench", 8) == 0)
+	if (ft_strncmp(arg, "--bench", 8) == 0)
 		opts->bench = 1;
-	else if (ft_strncmp(arg, "--count_only", 13) == 0)
+	if (ft_strncmp(arg, "--count_only", 13) == 0)
 		opts->count.count_only = true;
 	else
 		return (0);
