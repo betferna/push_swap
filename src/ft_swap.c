@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 12:09:48 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/18 13:06:04 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/18 15:09:01 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	sb(t_stack **b, t_counter *count)
 	if (!b)
 		return ;
 	ft_swap(b);
-		if (!count->count_only)
+	if (!count->count_only)
 		write(1, "sb\n", 3);
 	count->sb += 1;
 	count->total += 1;

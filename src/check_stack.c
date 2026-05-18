@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 11:56:54 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/18 14:59:43 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/18 15:28:36 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,3 @@ int	no_duplicate(char **argvs)
 	}
 	return (1);
 }
-
-// int	range_check(char **str)
-// {
-// 	long long	n;
-
-// 	n = ft_atoil((const char *)*str);
-// 	if (n < INT_MIN || n > INT_MAX)
-// 		return (0);
-// 	return (1);
-// }

@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 12:15:38 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/18 15:04:11 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/18 15:10:07 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,10 @@ int	count_flags(int argc, char **argvs, t_opts *opts)
 	int	flags;
 	int	i;
 
-	i = 1;
+	i = 0;
 	flags = 0;
-	while (i < argc && ft_isflag(argvs[i], opts))// Not sure we need the -1 so we always check the last arg? 
-	{
-		i++;
+	while (i++ < argc && ft_isflag(argvs[i], opts))
 		flags++;
-	}
 	return (flags);
 }
 

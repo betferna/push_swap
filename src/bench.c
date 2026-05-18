@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 11:53:13 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/18 15:05:42 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/18 15:16:15 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ char	*complexity_strategy(t_strategy s)
 
 void	print_bench(t_opts *opts, t_counter *count, double disorder)
 {
-	if (opts->count.count_only == 1)
-		ft_printf_fd(1, "%i\n", opts->count.total);
 	if (!opts->bench)
 		return ;
 	ft_printf_fd(2, "[bench] disorder:  %f %%\n", disorder);

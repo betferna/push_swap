@@ -6,7 +6,7 @@
 /*   By: user <user@student.42seoul.kr>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 11:50:27 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/18 15:00:03 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/18 15:08:08 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	dispatch_strategy(t_stack **a, t_stack **b, t_opts *opts,
 		complex_sort(a, b, count);
 	else if (opts->strategy == STRATEGY_ADAPTIVE)
 		opts->strategy = adaptive_sort(a, b, count);
-	// else if (opts->count.count_only == 1)
-	// 	ft_printf_fd(1, "llalal%i\n", count->total); 
 	else
 		return ;
 }
