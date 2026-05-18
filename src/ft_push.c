@@ -23,27 +23,28 @@ void	ft_push(t_stack **dst, t_stack **src)
 	ft_stack_add_front(dst, tmp);
 }
 
-void	ft_lstdellast(t_stack **lst)
-{
-	t_stack	*new_tail;
-	t_stack	*tail;
+//unsused function- can delete?
+// void	ft_lstdellast(t_stack **lst)
+// {
+// 	t_stack	*new_tail;
+// 	t_stack	*tail;
 
-	if (!lst || !*lst)
-		return ;
-	tail = *lst;
-	while (tail && tail->next != NULL)
-	{
-		if (tail && tail->next && tail->next->next == NULL)
-			new_tail = tail;
-		tail = tail->next;
-	}
-	if (!new_tail)
-	{
-		free(tail);
-		tail = NULL;
-	}
-	new_tail->next = NULL;
-}
+// 	if (!lst || !*lst)
+// 		return ;
+// 	tail = *lst;
+// 	while (tail && tail->next != NULL)
+// 	{
+// 		if (tail && tail->next && tail->next->next == NULL)
+// 			new_tail = tail;
+// 		tail = tail->next;
+// 	}
+// 	if (!new_tail)
+// 	{
+// 		free(tail);
+// 		tail = NULL;
+// 	}
+// 	new_tail->next = NULL;
+//}
 
 void	pa(t_stack **a, t_stack **b, t_counter *count)
 {
