@@ -6,7 +6,7 @@
 /*   By: marad <marad@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/12 12:13:43 by marad         #+#    #+#                 */
-/*   Updated: 2026/05/12 12:14:29 by marad         ########   odam.nl         */
+/*   Updated: 2026/05/18 11:21:05 by marad         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_stack(t_stack *stack)
 		return ;
 	while (stack)
 	{
-		fd_printf("%d\n", stack->value);//changed to fd_printf
+		ft_printf_fd(1, "%d\n", stack->value);//changed to ft_printf_fd
 		stack = stack->next;
 	}
 	printf("\n");
